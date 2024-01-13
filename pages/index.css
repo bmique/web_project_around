@@ -1,0 +1,15 @@
+.page {
+  background-color: #000;
+  color: #fff;
+}
+
+.profile__image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile__image {
+  width: 100%;
+}
