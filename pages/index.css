@@ -1,15 +1,59 @@
-.page {
+@import url(../vendor/normalize.css);
+@import url(../fonts/fonts.css);
+
+html {
+  margin: 0;
   background-color: #000;
   color: #fff;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 880px;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  height: 74px;
+  border-bottom: thin solid #545454;
+  padding-bottom: 41px;
+}
+
+.header__logo {
+  margin-top: 45px;
+  width: 173px;
+  height: 33px;
+}
+
+.main {
+  display: block;
+}
+
+.profile {
+  display: flex;
+  margin: 35px 0 50px;
 }
 
 .profile__image-container {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
 }
 
 .profile__image {
   width: 100%;
+  border-radius: 50%;
+}
+
+.profile__title {
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 48px; /* 114.286% */
+}
+
+.profile__edit {
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
 }
