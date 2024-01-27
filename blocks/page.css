@@ -1,0 +1,22 @@
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+html {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 880px;
+}
+
+.main {
+  display: block;
+}
