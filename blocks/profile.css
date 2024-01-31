@@ -13,7 +13,7 @@
   border-radius: 50%;
 }
 
-.profile__title {
+.profile__name {
   font-size: 42px;
   font-weight: 500;
   line-height: 48px;
@@ -72,7 +72,7 @@
   .profile__edit {
     align-items: center;
   }
-  .profile__title {
+  .profile__name {
     font-size: 22px;
     line-height: normal;
   }

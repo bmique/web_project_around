@@ -26,7 +26,7 @@
           </div>
           <div class="profile__edit">
             <div class="profile__edit-container">
-              <h1 class="profile__title">Jacques Cousteau</h1>
+              <h1 class="profile__name">Jacques Cousteau</h1>
               <button class="profile__edit-button"></button>
             </div>
             <p class="profile__info">Explorer</p>
@@ -102,23 +102,21 @@
           </div>
         </section>
       </main>
-      <div class="popup">
+      <section class="popup">
         <div class="popup__container">
           <button class="popup__button-close"></button>
-          <p class="popup__title">Edit profile</p>
           <form action="" class="popup__form">
-            <fieldset class="popup__fielset">
-              <input type="text" placeholder="Name" />
-              <p></p>
-              <input type="text" placeholder="About me" />
-              <p></p>
-            </fieldset>
-            <button class="popup__button-save">Save</button>
+            <p class="popup__title">Edit profile</p>
+            <input class="popup__input_type_name" type="text" />
+            <p></p>
+            <input class="popup__input_type_about" type="text" />
+            <p></p>
+            <button class="popup__button-save" type="submit">Save</button>
           </form>
         </div>
-      </div>
+      </section>
       <footer class="footer">&#169; 2020 Around The U.S.</footer>
     </div>
-    <script src="./script/script.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
