@@ -5,34 +5,4 @@
 @import url(../blocks/profile.css);
 @import url(../blocks/elements.css);
 @import url(../blocks/footer.css);
-
-.popup {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-  width: 430px;
-  height: 330px;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
-}
-
-.popup_opened {
-  display: flex;
-}
-
-.popup__button-close {
-  background-image: url(../images/close-icon.svg);
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-}
-
-.popup__title {
-  color: #000;
-  font-size: 24px;
-  font-weight: 900;
-  line-height: normal;
-}
+@import url(../blocks/popup.css);
