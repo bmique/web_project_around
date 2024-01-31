@@ -30,5 +30,13 @@ function closePopup() {
   editPopupElement.classList.remove("popup_opened");
 }
 
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+  profileNameElement.textContent = nameInput.value;
+  profileAboutElement.textContent = JobInput.value;
+  closePopup();
+}
+
 profileEditButton.addEventListener("click", handlePopupClick);
 closeButtonPopup.addEventListener("click", closePopup);
+formElement.addEventListener("submit", handleProfileFormSubmit);
