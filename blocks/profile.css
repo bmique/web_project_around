@@ -18,6 +18,10 @@
   font-weight: 500;
   line-height: 48px;
   margin-bottom: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 373px;
 }
 
 .profile__edit {
@@ -75,6 +79,7 @@
   .profile__name {
     font-size: 22px;
     line-height: normal;
+    max-width: 196px;
   }
   .profile__add-button {
     margin-top: 20px;
