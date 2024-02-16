@@ -102,7 +102,7 @@
           </li>
         </ul>
       </main>
-      <div class="popup">
+      <div class="popup" id="edit-profile-popup">
         <div class="popup__container">
           <button class="popup__button-close"></button>
           <p class="popup__title">Edit profile</p>
@@ -110,6 +110,36 @@
             <input class="popup__input popup__input_type_name" type="text" />
             <input class="popup__input popup__input_type_about" type="text" />
             <button class="popup__button-save" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="popup" id="edit-image-popup">
+        <div class="popup__container">
+          <button class="popup__button-close"></button>
+          <p class="popup__title">Nuevo lugar</p>
+          <form class="popup__form">
+            <input class="popup__input" type="text" placeholder="Título" />
+            <input
+              class="popup__input"
+              type="text"
+              placeholder="Enlace a la imagen"
+            />
+            <button class="popup__button-save" type="submit">Crear</button>
+          </form>
+        </div>
+      </div>
+      <div class="popup" id="image-popup">
+        <div class="popup__container">
+          <button class="popup__button-close"></button>
+          <p class="popup__title">Nuevo lugar</p>
+          <form class="popup__form">
+            <input class="popup__input" type="text" placeholder="Título" />
+            <input
+              class="popup__input"
+              type="text"
+              placeholder="Enlace a la imagen"
+            />
+            <button class="popup__button-save" type="submit">Crear</button>
           </form>
         </div>
       </div>
