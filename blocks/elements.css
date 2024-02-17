@@ -4,25 +4,28 @@
   gap: 17px;
 }
 
-.elements__card {
+.element {
+  width: 282px;
   height: 361px;
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.elements__image {
+.element__image {
   width: 282px;
+  height: 282px;
+  margin: 0;
 }
 
-.elements__info {
+.element__info {
   width: 246px;
   display: flex;
   justify-content: space-between;
   padding: 16px;
 }
 
-.elements__title {
+.element__name {
   color: #000;
   font-size: 24px;
   font-weight: 900;
@@ -30,10 +33,10 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 220px;
+  width: 220px;
 }
 
-.elements__like-button {
+.element__like-button {
   background-image: url(../images/like_button.svg);
   background-repeat: no-repeat;
   background-color: initial;
@@ -44,11 +47,11 @@
   margin-top: 6px;
 }
 
-.elements__like-button:hover {
+.element__like-button:hover {
   opacity: 0.6;
 }
 
-.elements__like-heart {
+.element__like-heart {
   background-image: url(../images/like-heart.svg);
   opacity: 1;
 }

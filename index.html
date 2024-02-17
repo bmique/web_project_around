@@ -33,6 +33,8 @@
           </div>
           <button class="profile__add-button"></button>
         </section>
+
+        <!--
         <ul class="elements">
           <li class="elements__card">
             <img
@@ -100,7 +102,7 @@
               <button class="elements__like-button"></button>
             </div>
           </li>
-        </ul>
+        </ul> -->
       </main>
       <div class="popup" id="popup-profile">
         <div class="popup__container">
@@ -131,7 +133,7 @@
           </form>
         </div>
       </div>
-      <div class="popup popup_opened" id="popup-add-card">
+      <div class="popup" id="popup-add-card">
         <div class="popup__container">
           <button
             class="popup__button-close"
@@ -165,6 +167,7 @@
           </form>
         </div>
       </div>
+      <div class="elements"></div>
       <div class="popup" id="popup-image">
         <div class="popup__container">
           <button class="popup__button-close"></button>
@@ -172,6 +175,15 @@
       </div>
       <footer class="footer">&#169; 2020 Around The U.S.</footer>
     </div>
+    <template class="template-card">
+      <div class="element">
+        <img src="" alt="" class="element__image" />
+        <div class="element__info">
+          <p class="element__name"></p>
+          <button class="element__like-button"></button>
+        </div>
+      </div>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
