@@ -14,6 +14,9 @@ const profileAddButton = document.querySelector(".profile__add-button");
 const newImageCloseButton = document.querySelector("#popup-close-add-button");
 const templateCard = document.querySelector(".template-card");
 const cardArea = document.querySelector(".elements");
+const inputCardTitle = document.querySelector("#input-title");
+const inputCardUrl = document.querySelector("#input-url");
+const formCard = document.querySelector("#addcard-button");
 
 const initialCards = [
   {
@@ -58,7 +61,7 @@ function handleOpenCardForm() {
   editPopupImage.classList.add("popup_opened");
 }
 
-function closeCardPopup() {
+function handleCloseCardForm() {
   editPopupImage.classList.remove("popup_opened");
 }
 
@@ -71,7 +74,7 @@ function handleProfileFormSubmit(evt) {
   closeProfilePopup();
 }
 
-//Crear-clonar cards
+//Clonar cards
 
 function cardGenerator(title, link) {
   const cardElement = templateCard
@@ -79,8 +82,14 @@ function cardGenerator(title, link) {
     .content.querySelector(".element");
   const cardImage = cardElement.querySelector(".element__image");
   const cardTitle = cardElement.querySelector(".element__name");
+  const likeButton = cardElement.querySelector(".element__like-button");
+
   cardImage.src = link;
   cardTitle.textContent = title;
+
+  likeButton.addEventListener("click", function () {
+    likeButton.classList.add("element__like-heart");
+  });
 
   return cardElement;
 }
@@ -90,6 +99,16 @@ initialCards.forEach(function (element) {
   cardArea.append(newCard);
 });
 
+//Crear cards
+
+function handleAddCardSubmit(evt) {
+  evt.preventDefault();
+  const newCard = cardGenerator(inputCardTitle.value, inputCardUrl.value);
+  cardArea.prepend(newCard);
+
+  handleCloseCardForm();
+}
+
 //function handleOpenProfileForm() {
 //  editPopupElement.classList.add("popup_opened");
 //}
@@ -97,14 +116,14 @@ initialCards.forEach(function (element) {
 //  editPopupElement.classList.remove("popup_opened");
 //}
 
-function likeButton() {}
-
 profileEditButton.addEventListener("click", handlePopupClick);
 profileCloseButton.addEventListener("click", closeProfilePopup);
 formElement.addEventListener("submit", handleProfileFormSubmit);
 
 profileAddButton.addEventListener("click", handleOpenCardForm);
-newImageCloseButton.addEventListener("click", closeCardPopup);
+newImageCloseButton.addEventListener("click", handleCloseCardForm);
+
+formCard.addEventListener("submit", handleAddCardSubmit);
 
 //profileEditButton.addEventListener("click", handleOpenProfileForm);
 //
