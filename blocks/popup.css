@@ -63,6 +63,10 @@
   line-height: 17px;
 }
 
+.popup_input-url {
+  margin-bottom: 50px;
+}
+
 .popup__input_type_about {
   margin-bottom: 48px;
 }

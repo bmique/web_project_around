@@ -26,7 +26,7 @@
           </div>
           <div class="profile__edit">
             <div class="profile__edit-container">
-              <h1 class="profile__name">Jacques Cousteau</h1>
+              <p class="profile__name">Jacques Cousteau</p>
               <button class="profile__edit-button"></button>
             </div>
             <p class="profile__info">Explorer</p>
@@ -102,45 +102,72 @@
           </li>
         </ul>
       </main>
-      <div class="popup" id="edit-profile-popup">
+      <div class="popup" id="popup-profile">
         <div class="popup__container">
           <button class="popup__button-close"></button>
           <p class="popup__title">Edit profile</p>
           <form class="popup__form">
-            <input class="popup__input popup__input_type_name" type="text" />
-            <input class="popup__input popup__input_type_about" type="text" />
-            <button class="popup__button-save" type="submit">Save</button>
+            <input
+              class="popup__input popup__input_type_name"
+              id="input-name"
+              type="text"
+              required
+              minlength="2"
+            />
+            <input
+              class="popup__input popup__input_type_about"
+              id="input-about"
+              type="text"
+              required
+              minlength="2"
+            />
+            <button
+              class="popup__button-save"
+              id="profile-save-button"
+              type="submit"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
-      <div class="popup" id="edit-image-popup">
+      <div class="popup popup_opened" id="popup-add-card">
         <div class="popup__container">
-          <button class="popup__button-close"></button>
+          <button
+            class="popup__button-close"
+            id="popup-close-add-button"
+          ></button>
           <p class="popup__title">Nuevo lugar</p>
           <form class="popup__form">
-            <input class="popup__input" type="text" placeholder="Título" />
             <input
               class="popup__input"
+              id="input-title"
+              type="text"
+              placeholder="Título"
+              required
+              minlength="2"
+            />
+            <input
+              class="popup__input popup_input-url"
+              id="input-url"
               type="text"
               placeholder="Enlace a la imagen"
+              required
+              minlength="2"
             />
-            <button class="popup__button-save" type="submit">Crear</button>
+            <button
+              class="popup__button-save"
+              id="addcard-button"
+              type="submit"
+            >
+              Crear
+            </button>
           </form>
         </div>
       </div>
-      <div class="popup" id="image-popup">
+      <div class="popup" id="popup-image">
         <div class="popup__container">
           <button class="popup__button-close"></button>
-          <p class="popup__title">Nuevo lugar</p>
-          <form class="popup__form">
-            <input class="popup__input" type="text" placeholder="Título" />
-            <input
-              class="popup__input"
-              type="text"
-              placeholder="Enlace a la imagen"
-            />
-            <button class="popup__button-save" type="submit">Crear</button>
-          </form>
         </div>
       </div>
       <footer class="footer">&#169; 2020 Around The U.S.</footer>
