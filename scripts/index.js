@@ -21,6 +21,8 @@ const popupImage = document.querySelector("#popup-image");
 const popupImageView = document.querySelector(".popup__image-view");
 const popupTitle = document.querySelector(".popup__title-image");
 const ImageCloseButton = document.querySelector("#popup-close-image");
+nameInput.value = profileName;
+JobInput.value = profileAbout;
 
 const initialCards = [
   {
@@ -51,8 +53,6 @@ const initialCards = [
 
 //Abrir y cerrar profile form
 function handlePopupClick(event) {
-  nameInput.value = profileName;
-  JobInput.value = profileAbout;
   editPopupElement.classList.add("popup_opened");
 }
 
