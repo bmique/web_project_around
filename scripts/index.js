@@ -16,10 +16,11 @@ const templateCard = document.querySelector(".template-card");
 const cardArea = document.querySelector(".elements");
 const inputCardTitle = document.querySelector("#input-title");
 const inputCardUrl = document.querySelector("#input-url");
-const formCard = document.querySelector("#addcard-button");
+const formCard = document.querySelector(".popup__button-create");
 const popupImage = document.querySelector("#popup-image");
 const popupImageView = document.querySelector(".popup__image-view");
 const popupTitle = document.querySelector(".popup__title-image");
+const ImageCloseButton = document.querySelector("#popup-close-image");
 
 const initialCards = [
   {
@@ -132,5 +133,5 @@ formElement.addEventListener("submit", handleProfileFormSubmit);
 profileAddButton.addEventListener("click", handleOpenCardForm);
 newImageCloseButton.addEventListener("click", handleCloseCardForm);
 
-formCard.addEventListener("submit", handleAddCardSubmit);
-profileCloseButton.addEventListener("click", handleCloseImage);
+formCard.addEventListener("click", handleAddCardSubmit);
+ImageCloseButton.addEventListener("click", handleCloseImage);
