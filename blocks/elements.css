@@ -56,6 +56,15 @@
   background-image: url(../images/like-heart.svg);
 }
 
+.element__remove {
+  background-image: url(../images/remove-card.svg);
+  position: absolute;
+  left: 455px;
+  top: 330px;
+  width: 18px;
+  height: 19px;
+}
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .elements {
     display: flex;

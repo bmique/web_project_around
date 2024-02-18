@@ -16,7 +16,7 @@ const templateCard = document.querySelector(".template-card");
 const cardArea = document.querySelector(".elements");
 const inputCardTitle = document.querySelector("#input-title");
 const inputCardUrl = document.querySelector("#input-url");
-const formCard = document.querySelector(".popup__button-create");
+const formCard = document.querySelector(".popup_add");
 const popupImage = document.querySelector("#popup-image");
 const popupImageView = document.querySelector(".popup__image-view");
 const popupTitle = document.querySelector(".popup__title-image");
@@ -97,6 +97,7 @@ function cardGenerator(title, link) {
   const cardImage = cardElement.querySelector(".element__image");
   const cardTitle = cardElement.querySelector(".element__name");
   const likeButton = cardElement.querySelector(".element__like-button");
+  const removeButton = cardElement.querySelector(".element__remove");
   cardImage.src = link;
   cardTitle.textContent = title;
 
@@ -106,6 +107,10 @@ function cardGenerator(title, link) {
 
   cardImage.addEventListener("click", function () {
     handleOpenImage(title, link);
+  });
+
+  removeButton.addEventListener("click", function () {
+    cardArea.remove();
   });
 
   return cardElement;
@@ -133,5 +138,5 @@ formElement.addEventListener("submit", handleProfileFormSubmit);
 profileAddButton.addEventListener("click", handleOpenCardForm);
 newImageCloseButton.addEventListener("click", handleCloseCardForm);
 
-formCard.addEventListener("click", handleAddCardSubmit);
+formCard.addEventListener("submit", handleAddCardSubmit);
 ImageCloseButton.addEventListener("click", handleCloseImage);
