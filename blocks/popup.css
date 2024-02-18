@@ -1,6 +1,7 @@
 .popup {
   display: none;
   position: fixed;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
   top: 0;
@@ -82,6 +83,18 @@
 
 .popup__button-save:hover {
   opacity: 0.6;
+}
+
+.popup__image-view {
+  max-width: 50%;
+  position: relative;
+}
+
+#popup-close-image {
+  top: 275px;
+  right: 325px;
+  width: 30px;
+  height: 30px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {

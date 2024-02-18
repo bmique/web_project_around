@@ -17,6 +17,9 @@ const cardArea = document.querySelector(".elements");
 const inputCardTitle = document.querySelector("#input-title");
 const inputCardUrl = document.querySelector("#input-url");
 const formCard = document.querySelector("#addcard-button");
+const popupImage = document.querySelector("#popup-image");
+const popupImageView = document.querySelector(".popup__image-view");
+const popupTitle = document.querySelector(".popup__title-image");
 
 const initialCards = [
   {
@@ -65,6 +68,16 @@ function handleCloseCardForm() {
   editPopupImage.classList.remove("popup_opened");
 }
 
+//Abrir y cerrar imagen
+function handleOpenImage(title, link) {
+  popupImageView.src = link;
+  popupTitle.textContent = title;
+  popupImage.classList.add("popup_opened");
+}
+function handleCloseImage() {
+  popupImage.classList.remove("popup_opened");
+}
+
 //Editar profile form
 
 function handleProfileFormSubmit(evt) {
@@ -83,12 +96,15 @@ function cardGenerator(title, link) {
   const cardImage = cardElement.querySelector(".element__image");
   const cardTitle = cardElement.querySelector(".element__name");
   const likeButton = cardElement.querySelector(".element__like-button");
-
   cardImage.src = link;
   cardTitle.textContent = title;
 
   likeButton.addEventListener("click", function () {
-    likeButton.classList.add("element__like-heart");
+    likeButton.classList.toggle("element__like-heart");
+  });
+
+  cardImage.addEventListener("click", function () {
+    handleOpenImage(title, link);
   });
 
   return cardElement;
@@ -109,13 +125,6 @@ function handleAddCardSubmit(evt) {
   handleCloseCardForm();
 }
 
-//function handleOpenProfileForm() {
-//  editPopupElement.classList.add("popup_opened");
-//}
-//function handleCloseProfileForm() {
-//  editPopupElement.classList.remove("popup_opened");
-//}
-
 profileEditButton.addEventListener("click", handlePopupClick);
 profileCloseButton.addEventListener("click", closeProfilePopup);
 formElement.addEventListener("submit", handleProfileFormSubmit);
@@ -124,6 +133,4 @@ profileAddButton.addEventListener("click", handleOpenCardForm);
 newImageCloseButton.addEventListener("click", handleCloseCardForm);
 
 formCard.addEventListener("submit", handleAddCardSubmit);
-
-//profileEditButton.addEventListener("click", handleOpenProfileForm);
-//
+profileCloseButton.addEventListener("click", handleCloseImage);
