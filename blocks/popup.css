@@ -6,6 +6,7 @@
   height: 100vh;
   top: 0;
   right: 0;
+  left: 0;
   justify-content: center;
   align-items: center;
   z-index: 1;
@@ -86,12 +87,18 @@
 }
 
 .popup__image-view {
-  max-width: 50%;
+  position: relative;
+  width: 816px;
+  height: 540px;
+}
+
+.popup-image-container {
+  position: relative;
 }
 
 #popup-close-image {
-  top: 290px;
-  right: 290px;
+  top: 0px;
+  right: 0px;
   width: 30px;
   height: 30px;
 }
@@ -129,5 +136,9 @@
   }
   .popup__button-save {
     padding: 13px;
+  }
+  .popup__image-view {
+    width: 240px;
+    height: 299px;
   }
 }
