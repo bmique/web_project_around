@@ -110,7 +110,7 @@ function cardGenerator(title, link) {
   });
 
   removeButton.addEventListener("click", function () {
-    cardArea.remove();
+    cardElement.remove();
   });
 
   return cardElement;
