@@ -20,7 +20,7 @@ const formCard = document.querySelector(".popup__form-add");
 const popupImage = document.querySelector("#popup-image");
 const popupImageView = document.querySelector(".popup__image-view");
 const popupTitle = document.querySelector(".popup__title-image");
-const ImageCloseButton = document.querySelector("#popup-close-image");
+const imageCloseButton = document.querySelector("#popup-close-image");
 nameInput.value = profileName;
 JobInput.value = profileAbout;
 
@@ -73,6 +73,8 @@ function handleCloseCardForm() {
 function handleOpenImage(title, link) {
   popupImageView.src = link;
   popupTitle.textContent = title;
+  inputCardTitle.value = "";
+  inputCardUrl.value = "";
   popupImage.classList.add("popup_opened");
 }
 function handleCloseImage() {
@@ -139,4 +141,4 @@ profileAddButton.addEventListener("click", handleOpenCardForm);
 newImageCloseButton.addEventListener("click", handleCloseCardForm);
 
 formCard.addEventListener("submit", handleAddCardSubmit);
-ImageCloseButton.addEventListener("click", handleCloseImage);
+imageCloseButton.addEventListener("click", handleCloseImage);
