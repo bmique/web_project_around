@@ -73,8 +73,6 @@ function handleCloseCardForm() {
 function handleOpenImage(title, link) {
   popupImageView.src = link;
   popupTitle.textContent = title;
-  inputCardTitle.value = "";
-  inputCardUrl.value = "";
   popupImage.classList.add("popup_opened");
 }
 function handleCloseImage() {
@@ -101,6 +99,7 @@ function cardGenerator(title, link) {
   const likeButton = cardElement.querySelector(".element__like-button");
   const removeButton = cardElement.querySelector(".element__remove");
   cardImage.src = link;
+  cardImage.alt = title;
   cardTitle.textContent = title;
 
   likeButton.addEventListener("click", function () {
@@ -131,6 +130,7 @@ function handleAddCardSubmit(evt) {
   cardArea.prepend(newCard);
 
   handleCloseCardForm();
+  formCard.reset();
 }
 
 profileEditButton.addEventListener("click", handlePopupClick);
