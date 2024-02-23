@@ -63,6 +63,7 @@
   background-image: url(../images/trash.svg);
   background-repeat: no-repeat;
   position: absolute;
+  cursor: pointer;
   top: 10px;
   right: 10px;
   width: 18px;
