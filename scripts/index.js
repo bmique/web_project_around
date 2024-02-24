@@ -72,6 +72,7 @@ function handleCloseCardForm() {
 //Abrir y cerrar imagen
 function handleOpenImage(title, link) {
   popupImageView.src = link;
+  popupImageView.alt = title;
   popupTitle.textContent = title;
   popupImage.classList.add("popup_opened");
 }
@@ -100,6 +101,7 @@ function cardGenerator(title, link) {
   const removeButton = cardElement.querySelector(".element__remove");
   cardImage.src = link;
   cardImage.alt = title;
+
   cardTitle.textContent = title;
 
   likeButton.addEventListener("click", function () {
