@@ -7,7 +7,7 @@ const profileAbout = profileAboutElement.textContent;
 const profileSaveButton = document.querySelector("#profile-save-button");
 const profileEditButton = document.querySelector(".profile__edit-button");
 const editPopupElement = document.querySelector("#popup-profile");
-const formElement = document.querySelector(".popup__form");
+const formElement = document.forms.form1;
 const profileCloseButton = document.querySelector(".popup__button-close");
 const editPopupImage = document.querySelector("#popup-add-card");
 const profileAddButton = document.querySelector(".profile__add-button");
@@ -16,7 +16,7 @@ const templateCard = document.querySelector(".template-card");
 const cardArea = document.querySelector(".elements");
 const inputCardTitle = document.querySelector("#input-title");
 const inputCardUrl = document.querySelector("#input-url");
-const formCard = document.querySelector(".popup__form-add");
+const formCard = document.forms.form2;
 const popupImage = document.querySelector("#popup-image");
 const popupImageView = document.querySelector(".popup__image-view");
 const popupTitle = document.querySelector(".popup__title-image");
@@ -143,9 +143,9 @@ formCard.addEventListener("submit", handleAddCardSubmit);
 imageCloseButton.addEventListener("click", handleCloseImage);
 
 //Cerrar ventanas emergentes
-editPopupElement.addEventListener("click", closeProfilePopup);
-editPopupImage.addEventListener("click", handleCloseCardForm);
-popupImage.addEventListener("click", handleCloseImage);
+//editPopupElement.addEventListener("click", closeProfilePopup);
+//editPopupImage.addEventListener("click", handleCloseCardForm);
+//popupImage.addEventListener("click", handleCloseImage);
 
 //Cerrar con boton esc
 document.addEventListener("keydown", function (evt) {
