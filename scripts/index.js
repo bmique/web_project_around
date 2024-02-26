@@ -81,7 +81,6 @@ function handleCloseImage() {
 }
 
 //Editar profile form
-
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileNameElement.textContent = nameInput.value;
@@ -90,7 +89,6 @@ function handleProfileFormSubmit(evt) {
 }
 
 //Clonar cards
-
 function cardGenerator(title, link) {
   const cardElement = templateCard
     .cloneNode(true)
@@ -125,7 +123,6 @@ initialCards.forEach(function (element) {
 });
 
 //Crear cards
-
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const newCard = cardGenerator(inputCardTitle.value, inputCardUrl.value);
@@ -144,3 +141,17 @@ newImageCloseButton.addEventListener("click", handleCloseCardForm);
 
 formCard.addEventListener("submit", handleAddCardSubmit);
 imageCloseButton.addEventListener("click", handleCloseImage);
+
+//Cerrar ventanas emergentes
+editPopupElement.addEventListener("click", closeProfilePopup);
+editPopupImage.addEventListener("click", handleCloseCardForm);
+popupImage.addEventListener("click", handleCloseImage);
+
+//Cerrar con boton esc
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    closeProfilePopup();
+    handleCloseCardForm();
+    handleCloseImage();
+  }
+});
