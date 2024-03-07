@@ -1,5 +1,3 @@
-import "./validate";
-
 const profileNameElement = document.querySelector(".profile__name");
 const profileAboutElement = document.querySelector(".profile__info");
 const nameInput = document.querySelector("#input-name");
