@@ -36,7 +36,7 @@
       </main>
       <div class="popup" id="popup-profile">
         <div class="popup__container">
-          <button class="popup__button-close"></button>
+          <button class="popup__button-close popup__button"></button>
           <p class="popup__title">Edit profile</p>
           <form name="form1" class="popup__form" novalidate>
             <input
@@ -58,7 +58,7 @@
             />
             <span class="popup__input_type_error input-about-error"></span>
             <button
-              class="popup__button-save"
+              class="popup__button-save popup__button"
               id="profile-save-button"
               type="submit"
             >
@@ -70,7 +70,7 @@
       <div class="popup" id="popup-add-card">
         <div class="popup__container">
           <button
-            class="popup__button-close"
+            class="popup__button-close popup__button"
             id="popup-close-add-button"
           ></button>
           <p class="popup__title">Nuevo lugar</p>
@@ -94,7 +94,7 @@
             />
             <span class="popup__input_type_error input-url-error"></span>
             <button
-              class="popup__button-save popup__button-create"
+              class="popup__button-save popup__button-create popup__button"
               id="addcard-button"
               type="submit"
             >
@@ -107,7 +107,10 @@
       <div class="popup" id="popup-image">
         <div class="popup__container-image">
           <img class="popup__image-view" src="." alt=" " />
-          <button class="popup__button-close" id="popup-close-image"></button>
+          <button
+            class="popup__button popup__button-close"
+            id="popup-close-image"
+          ></button>
           <h3 class="popup__title-image"></h3>
         </div>
       </div>

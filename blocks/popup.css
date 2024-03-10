@@ -45,18 +45,6 @@
   opacity: 0.6;
 }
 
-.popup__button_disabled {
-  background-color: #fff;
-  color: #ccc;
-  border: 1px solid #ccc;
-}
-
-.popup__button_disabled:hover {
-  cursor: text;
-  color: #ccc;
-  opacity: 1;
-}
-
 .popup__title {
   color: #000;
   font-size: 24px;
@@ -133,6 +121,17 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+}
+
+.popup__button_disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.popup__button_disabled:hover {
+  cursor: text;
+  color: #ccc;
+  opacity: 1;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {

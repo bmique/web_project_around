@@ -21,6 +21,7 @@ const popupImage = document.querySelector("#popup-image");
 const popupImageView = document.querySelector(".popup__image-view");
 const popupTitle = document.querySelector(".popup__title-image");
 const imageCloseButton = document.querySelector("#popup-close-image");
+const popupElement = document.querySelector(".popup");
 nameInput.value = profileName;
 JobInput.value = profileAbout;
 
@@ -132,6 +133,34 @@ function handleAddCardSubmit(evt) {
   formCard.reset();
 }
 
+//Cerrar con boton esc
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    closeProfilePopup();
+    handleCloseCardForm();
+    handleCloseImage();
+  }
+});
+
+//Cerrar ventanas emergentes
+popupElement.addEventListener("click", function (event) {
+  if (event.target.classList.contains("popup_opened")) {
+    closeProfilePopup();
+  }
+});
+
+editPopupImage.addEventListener("click", function (event) {
+  if (event.target.classList.contains("popup_opened")) {
+    handleCloseCardForm();
+  }
+});
+
+popupImage.addEventListener("click", function (event) {
+  if (event.target.classList.contains("popup_opened")) {
+    handleCloseImage();
+  }
+});
+
 profileEditButton.addEventListener("click", handlePopupClick);
 profileCloseButton.addEventListener("click", closeProfilePopup);
 formElement.addEventListener("submit", handleProfileFormSubmit);
@@ -141,17 +170,3 @@ newImageCloseButton.addEventListener("click", handleCloseCardForm);
 
 formCard.addEventListener("submit", handleAddCardSubmit);
 imageCloseButton.addEventListener("click", handleCloseImage);
-
-//Cerrar ventanas emergentes
-//editPopupElement.addEventListener("click", closeProfilePopup);
-//editPopupImage.addEventListener("click", handleCloseCardForm);
-//popupImage.addEventListener("click", handleCloseImage);
-
-//Cerrar con boton esc
-document.addEventListener("keydown", function (evt) {
-  if (evt.key === "Escape") {
-    closeProfilePopup();
-    handleCloseCardForm();
-    handleCloseImage();
-  }
-});

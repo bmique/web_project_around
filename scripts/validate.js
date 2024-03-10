@@ -1,5 +1,4 @@
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
-  console.log("Leyendo showinputerror ->", inputElement);
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(settings.inputErrorClass);
   errorElement.textContent = errorMessage;
@@ -7,7 +6,6 @@ const showInputError = (formElement, inputElement, errorMessage, settings) => {
 };
 
 const hideInputError = (formElement, inputElement, settings) => {
-  // console.log("Leyendo hideinputerror ->", formElement);
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(settings.inputErrorClass);
   errorElement.classList.remove(settings.errorClass);
@@ -49,7 +47,7 @@ const setEventListeners = (formElement, settings) => {
     settings.submitButtonSelector
   );
 
-  toggleButtonState(inputList, buttonElement);
+  toggleButtonState(inputList, buttonElement, settings);
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
