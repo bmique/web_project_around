@@ -33,45 +33,96 @@
           </div>
           <button class="profile__add-button"></button>
         </section>
-        <div class="elements"></div>
       </main>
-      <footer class="footer">&#169; 2020 Around The U.S.</footer>
-
-    <template class="template-card" id="card-template">
-      <div class="element" id="card">
-        <div class="element__remove"></div>
-        <img src="." alt=" " class="element__image" />
-        <div class="element__info">
-          <p class="element__name"></p>
-          <button class="element__like-button"></button>
-        </div>
-      </div>
-    </template>
-    <template id="popup-template">
-      <div class="popup">
+      <div class="popup" id="popup-profile">
         <div class="popup__container">
           <button class="popup__button-close popup__button"></button>
-          <p class="popup__title"></p>
+          <p class="popup__title">Edit profile</p>
           <form name="form1" class="popup__form" novalidate>
             <input
               class="popup__input popup__input_type_name"
               id="input-name"
               type="text"
-              name="name"
-              placeholder=""
+              minlength="2"
+              maxlength="40"
               required
             />
-            <span class="popup__span-error popup__input-name-error"></span>
+            <span class="input-name-error"></span>
             <input
-              name="info"
-              id="popup__input-info"
-              placeholder=""
-              class="popup__form-item popup__form-item_info"
+              class="popup__input popup__input_type_about"
+              id="input-about"
+              type="text"
+              minlength="2"
+              maxlength="200"
               required
             />
-            <span class="popup__span-error popup__input-info-error"></span>
-            <button type="submit" class="popup__form-button"></button>
+            <span class="input-about-error"></span>
+            <button
+              class="popup__button-save popup__button"
+              id="profile-save-button"
+              type="submit"
+            >
+              Save
+            </button>
           </form>
+        </div>
+      </div>
+      <div class="popup" id="popup-add-card">
+        <div class="popup__container">
+          <button
+            class="popup__button-close popup__button"
+            id="popup-close-add-button"
+          ></button>
+          <p class="popup__title">Nuevo lugar</p>
+          <form name="form2" class="popup__form popup__form-add" novalidate>
+            <input
+              class="popup__input"
+              id="input-title"
+              type="text"
+              placeholder="Titulo"
+              minlength="2"
+              maxlength="30"
+              required
+            />
+            <span class="input-title-error"></span>
+            <input
+              class="popup__input popup__input-url"
+              id="input-url"
+              type="url"
+              placeholder="Enlace a la imagen"
+              required
+            />
+            <span class="input-url-error"></span>
+            <button
+              class="popup__button-save popup__button-create popup__button"
+              id="addcard-button"
+              type="submit"
+            >
+              Crear
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="elements"></div>
+      <div class="popup" id="popup-image">
+        <div class="popup__container-image">
+          <img class="popup__image-view" src="." alt=" " />
+          <button
+            class="popup__button popup__button-close"
+            id="popup-close-image"
+          ></button>
+          <h3 class="popup__title-image"></h3>
+        </div>
+      </div>
+      <footer class="footer">&#169; 2020 Around The U.S.</footer>
+    </div>
+    <template class="template-card">
+      <div class="element">
+        <div class="element__remove"></div>
+        <img src="." alt=" " class="element__image" />
+        <div class="element__info">
+          <p class="element__name"></p>
+          <button class="element__like-button"></button>
         </div>
       </div>
     </template>

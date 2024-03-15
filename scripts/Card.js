@@ -23,10 +23,9 @@ export default class Card {
   }
 
   _handleOpenPopup(obj) {
-    obj.imgPopup.querySelector(".image-container__img").src = this._link;
-    obj.imgPopup.querySelector(".image-container__img").alt = this._name;
-    obj.imgPopup.querySelector(".image-container__title").textContent =
-      this._name;
+    obj.imgPopup.querySelector(".popup__container-image").src = this._link;
+    obj.imgPopup.querySelector(".popup__container-image").alt = this._name;
+    obj.imgPopup.querySelector(".popup__title-image").textContent = this._name;
     obj.page.prepend(obj.imgPopup);
     document.addEventListener("keydown", obj.closeEscape);
   }
