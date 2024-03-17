@@ -1,6 +1,6 @@
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
-import { showPopup, closePopup } from "./utils.js";
+// import Card from "./Card.js";
+// import FormValidator from "./FormValidator.js";
+// import { showPopup, closePopup } from "./utils.js";
 
 const profileNameElement = document.querySelector(".profile__name");
 const profileAboutElement = document.querySelector(".profile__info");
