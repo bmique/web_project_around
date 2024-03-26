@@ -1,5 +1,5 @@
-// import Card from "./Card.js";
-// import FormValidator from "./FormValidator.js";
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
 // import { showPopup, closePopup } from "./utils.js";
 
 const profileNameElement = document.querySelector(".profile__name");
@@ -29,6 +29,21 @@ const popupElement = document.querySelector(".popup");
 nameInput.value = profileName;
 JobInput.value = profileAbout;
 
+//FormValidator
+const settings = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};
+
+const validateForm = new FormValidator(formElement, settings);
+validateForm.enableValidation();
+
+//
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -56,6 +71,13 @@ const initialCards = [
   },
 ];
 
+initialCards.forEach((card) => {
+  const cardTest = new Card(card, ".template-card");
+  const cardElement = cardTest.generateCard();
+
+  document.querySelector(".elements").append(cardElement);
+});
+
 //Abrir y cerrar profile form
 function handlePopupClick(event) {
   editPopupElement.classList.add("popup_opened");
@@ -74,16 +96,16 @@ function handleCloseCardForm() {
   editPopupImage.classList.remove("popup_opened");
 }
 
-//Abrir y cerrar imagen
-function handleOpenImage(title, link) {
-  popupImageView.src = link;
-  popupImageView.alt = title;
-  popupTitle.textContent = title;
-  popupImage.classList.add("popup_opened");
-}
-function handleCloseImage() {
-  popupImage.classList.remove("popup_opened");
-}
+// //Abrir y cerrar imagen
+// function handleOpenImage(title, link) {
+//   popupImageView.src = link;
+//   popupImageView.alt = title;
+//   popupTitle.textContent = title;
+//   popupImage.classList.add("popup_opened");
+// }
+// function handleCloseImage() {
+//   popupImage.classList.remove("popup_opened");
+// }
 
 //Editar profile form
 function handleProfileFormSubmit(evt) {
@@ -94,36 +116,36 @@ function handleProfileFormSubmit(evt) {
 }
 
 //Clonar cards
-function cardGenerator(title, link) {
-  const cardElement = templateCard
-    .cloneNode(true)
-    .content.querySelector(".element");
-  const cardImage = cardElement.querySelector(".element__image");
-  const cardTitle = cardElement.querySelector(".element__name");
-  const likeButton = cardElement.querySelector(".element__like-button");
-  const removeButton = cardElement.querySelector(".element__remove");
-  cardImage.src = link;
-  cardImage.alt = title;
+// function cardGenerator(title, link) {
+//   const cardElement = templateCard
+//     .cloneNode(true)
+//     .content.querySelector(".element");
+//   const cardImage = cardElement.querySelector(".element__image");
+//   const cardTitle = cardElement.querySelector(".element__name");
+//   const likeButton = cardElement.querySelector(".element__like-button");
+//   const removeButton = cardElement.querySelector(".element__remove");
+//   cardImage.src = link;
+//   cardImage.alt = title;
 
-  cardTitle.textContent = title;
+//   cardTitle.textContent = title;
 
-  likeButton.addEventListener("click", function () {
-    likeButton.classList.toggle("element__like-heart");
-  });
+//   likeButton.addEventListener("click", function () {
+//     likeButton.classList.toggle("element__like-heart");
+//   });
 
-  cardImage.addEventListener("click", function () {
-    handleOpenImage(title, link);
-  });
+//   cardImage.addEventListener("click", function () {
+//     handleOpenImage(title, link);
+//   });
 
-  removeButton.addEventListener("click", function () {
-    cardElement.remove();
-  });
+//   removeButton.addEventListener("click", function () {
+//     cardElement.remove();
+//   });
 
-  return cardElement;
-}
+//   return cardElement;
+// }
 
 initialCards.forEach(function (element) {
-  const newCard = cardGenerator(element.name, element.link);
+  const newCard = generateCard(element.name, element.link);
   cardArea.append(newCard);
 });
 
@@ -173,4 +195,4 @@ profileAddButton.addEventListener("click", handleOpenCardForm);
 newImageCloseButton.addEventListener("click", handleCloseCardForm);
 
 formCard.addEventListener("submit", handleAddCardSubmit);
-imageCloseButton.addEventListener("click", handleCloseImage);
+// imageCloseButton.addEventListener("click", handleCloseImage);
