@@ -9,7 +9,6 @@ export default class Card {
     this._cardElement = selector
       .cloneNode(true)
       .content.querySelector(".element");
-
     this._cardLink = this._cardImage.src;
     this._cardName = this._cardImage.alt;
     this._cardText = this._cardTitle.textContent;
@@ -81,6 +80,14 @@ export default class Card {
   //   const inputCardUrl = document.querySelector("#input-url");
   //   const newCard = cardGenerator(inputCardTitle.value, inputCardUrl.value);
   //   cardArea.prepend(newCard);
-  //   handleCloseCardForm();
+  //
   //   formCard.reset();
+
+  // this._newCard = this._element(
+  //   this._inputCardTitle.value,
+  //   this._inputCardUrl.value
+  // );
+
+  // this._inputCardTitle = document.querySelector("#input-title");
+  // this._inputCardUrl = document.querySelector("#input-url");
 }

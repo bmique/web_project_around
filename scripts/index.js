@@ -3,6 +3,7 @@ import FormValidator from "./FormValidator.js";
 import { handlePopupClick, closeProfilePopup } from "./utils.js";
 
 //FormValidator
+const formElement = document.querySelector(".popup__form");
 const settings = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -12,13 +13,44 @@ const settings = {
   errorClass: "popup__error_visible",
 };
 
-const validateForm = new FormValidator(settings);
+const validateForm = new FormValidator(formElement, settings);
 validateForm.enableValidation();
 
 //Clonar cards
+const initialCards = [
+  {
+    name: "Valle de Yosemite",
+
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+  },
+  {
+    name: "Monta√±as Calvas",
+
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+  },
+  {
+    name: "Parque Nacional de la Vanoise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+  },
+];
 
 initialCards.forEach(() => {
   const cardArea = document.querySelector(".elements");
-  const cloneCard = new Card(generateCard());
+  const cloneCard = new Card();
   cardArea.append(cloneCard);
 });
