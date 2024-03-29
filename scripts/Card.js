@@ -68,26 +68,11 @@ export default class Card {
   }
 
   generateCard(evt) {
-    evt.preventDefault();
+    //evt.preventDefault();
     this._element = this._getCloneFromTemplate();
     this._setCardProperties();
     this._setEventListeners();
 
     return this._element;
   }
-
-  //   const inputCardTitle = document.querySelector("#input-title");
-  //   const inputCardUrl = document.querySelector("#input-url");
-  //   const newCard = cardGenerator(inputCardTitle.value, inputCardUrl.value);
-  //   cardArea.prepend(newCard);
-  //
-  //   formCard.reset();
-
-  // this._newCard = this._element(
-  //   this._inputCardTitle.value,
-  //   this._inputCardUrl.value
-  // );
-
-  // this._inputCardTitle = document.querySelector("#input-title");
-  // this._inputCardUrl = document.querySelector("#input-url");
 }

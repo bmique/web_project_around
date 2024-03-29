@@ -1,6 +1,12 @@
-import Card from "./Card.js";
+// import Card from "./Card.js";
+import Card1 from "./Card1.js";
 import FormValidator from "./FormValidator.js";
 import { handlePopupClick, closeProfilePopup } from "./utils.js";
+
+const cardArea = document.querySelector(".elements");
+const inputCardTitle = document.querySelector("#input-title");
+const inputCardUrl = document.querySelector("#input-url");
+const formCard = document.forms.form2;
 
 //FormValidator
 const formElement = document.querySelector(".popup__form");
@@ -49,8 +55,14 @@ const initialCards = [
   },
 ];
 
-initialCards.forEach(() => {
-  const cardArea = document.querySelector(".elements");
-  const cloneCard = new Card();
-  cardArea.append(cloneCard);
-});
+// initialCards.forEach(() => {
+//   const cardTest = new Card().generateCard();
+//   cardArea.append(cardTest);
+//   formCard.reset();
+// });
+
+// formCard.addEventListener("submit", (evt) => {
+//   evt.preventDefault();
+//   const cardTest = new Card(inputCardUrl.value, inputCardTitle.value);
+//   cardArea.append(cardTest.generateCard());
+// });
