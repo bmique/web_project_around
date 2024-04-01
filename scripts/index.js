@@ -1,5 +1,4 @@
-// import Card from "./Card.js";
-import Card1 from "./Card1.js";
+import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import { handlePopupClick, closeProfilePopup } from "./utils.js";
 
@@ -26,22 +25,18 @@ validateForm.enableValidation();
 const initialCards = [
   {
     name: "Valle de Yosemite",
-
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
   },
   {
     name: "Lago Louise",
-
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
   },
   {
     name: "Monta√±as Calvas",
-
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
   },
   {
     name: "Latemar",
-
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
   },
   {
@@ -50,16 +45,15 @@ const initialCards = [
   },
   {
     name: "Lago di Braies",
-
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
 ];
 
-// initialCards.forEach(() => {
-//   const cardTest = new Card().generateCard();
-//   cardArea.append(cardTest);
-//   formCard.reset();
-// });
+initialCards.forEach(() => {
+  const cardTest = new Card().generateCard();
+  cardArea.append(cardTest);
+  formCard.reset();
+});
 
 // formCard.addEventListener("submit", (evt) => {
 //   evt.preventDefault();
