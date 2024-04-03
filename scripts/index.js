@@ -9,7 +9,9 @@ const inputCardUrl = document.querySelector("#input-url");
 const formCard = document.forms.form2;
 
 //FormValidator
-const formElement = document.querySelectorAll(".popup__form");
+const formElementProfile = document.querySelector("#popup_form-profile");
+const formElementCard = document.querySelector(".popup__form-add");
+
 const settings = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -19,8 +21,11 @@ const settings = {
   errorClass: "popup__error_visible",
 };
 
-const validateForm = new FormValidator(formElement, settings);
+const validateForm = new FormValidator(formElementProfile, settings);
 validateForm.enableValidation();
+
+const validateFormCard = new FormValidator(formElementCard, settings);
+validateFormCard.enableValidation();
 
 //Clonar cards
 const initialCards = [
@@ -33,7 +38,7 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
   },
   {
-    name: "Monta√±as Calvas",
+    name: "Montañas Calvas",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
   },
   {

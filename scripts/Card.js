@@ -6,26 +6,27 @@ export default class Card {
   }
 
   _getCloneFromTemplate() {
-    this._cardElement = template
+    this._cardElement = this._template
       .cloneNode(true)
       .content.querySelector(".element");
-    this._cardLink = this._cardImage.src;
-    this._cardName = this._cardImage.alt;
-    this._cardText = this._cardTitle.textContent;
+    this._setCardProperties();
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
+    this._cardTitle.textContent = this._name;
 
     return this._cardElement;
   }
 
   _setCardProperties() {
-    this._templateCard = document.querySelector(".template-card");
-    this._cardImage = cardElement.querySelector(".element__image");
-    this._cardTitle = cardElement.querySelector(".element__name");
-    this._likeButton = cardElement.querySelector(".element__like-button");
-    this._removeButton = cardElement.querySelector(".element__remove");
-    this._imageCloseButton = document.querySelector("#popup-close-image");
-    this._popupImageView = document.querySelector(".popup__image-view");
+    this._cardImage = this._cardElement.querySelector(".element__image");
+    this._cardTitle = this._cardElement.querySelector(".element__name");
+    this._likeButton = this._cardElement.querySelector(".element__like-button");
+    this._removeButton = this._cardElement.querySelector(".element__remove");
     this._popupImage = document.querySelector("#popup-image");
-    this._popupTitle = document.querySelector(".popup__title-image");
+    this._popupImageView = this._popupImage.querySelector(".popup__image-view");
+    this._imageCloseButton =
+      this._popupImage.querySelector("#popup-close-image");
+    this._popupTitle = this._popupImage.querySelector(".popup__title-image");
   }
 
   _handleLike() {
@@ -35,18 +36,17 @@ export default class Card {
     this._removeCard = this._cardElement.remove();
   }
   _handleOpenImage() {
-    this._image = this._popupImageView.src;
-    this._titleImage = this._popupImageView.alt;
-    this._titlePopup = this._popupTitle.textContent;
+    this._popupImageView.src = this._link;
+    this._popupImageView.alt = this._name;
+    this._popupTitle.textContent = this._name;
     this._popupImage.classList.add("popup_opened");
   }
   _handleCloseImage() {
-    this._image = " ";
     this._popupImage.classList.remove("popup_opened");
   }
 
   _setEventListeners() {
-    this._element.addEventListener("click", () => {
+    this._popupImage.addEventListener("click", () => {
       this._handleOpenImage();
     });
 
@@ -68,9 +68,7 @@ export default class Card {
   }
 
   generateCard(evt) {
-    //evt.preventDefault();
     this._getCloneFromTemplate();
-    this._setCardProperties();
     this._setEventListeners();
 
     return this._cardElement;
