@@ -3,12 +3,13 @@ import FormValidator from "./FormValidator.js";
 import { handlePopupClick, closeProfilePopup } from "./utils.js";
 
 const cardArea = document.querySelector(".elements");
+const templateCard = document.querySelector(".template-card");
 const inputCardTitle = document.querySelector("#input-title");
 const inputCardUrl = document.querySelector("#input-url");
 const formCard = document.forms.form2;
 
 //FormValidator
-const formElement = document.querySelector(".popup__form");
+const formElement = document.querySelectorAll(".popup__form");
 const settings = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -49,10 +50,9 @@ const initialCards = [
   },
 ];
 
-initialCards.forEach(() => {
-  const cardTest = new Card().generateCard();
-  cardArea.append(cardTest);
-  formCard.reset();
+initialCards.forEach((e) => {
+  const cardTest = new Card(e.name, e.link, templateCard);
+  cardArea.append(cardTest.generateCard());
 });
 
 // formCard.addEventListener("submit", (evt) => {

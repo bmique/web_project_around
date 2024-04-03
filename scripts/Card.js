@@ -1,12 +1,12 @@
 export default class Card {
-  constructor(name, link, selector) {
+  constructor(name, link, template) {
     this._name = name;
     this._link = link;
-    this._selector = selector;
+    this._template = template;
   }
 
   _getCloneFromTemplate() {
-    this._cardElement = selector
+    this._cardElement = template
       .cloneNode(true)
       .content.querySelector(".element");
     this._cardLink = this._cardImage.src;
@@ -69,10 +69,10 @@ export default class Card {
 
   generateCard(evt) {
     //evt.preventDefault();
-    this._element = this._getCloneFromTemplate();
+    this._getCloneFromTemplate();
     this._setCardProperties();
     this._setEventListeners();
 
-    return this._element;
+    return this._cardElement;
   }
 }
