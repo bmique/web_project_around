@@ -11,6 +11,7 @@ export default class Card {
     this._cardElement = this._template
       .cloneNode(true)
       .content.querySelector(".element");
+
     this._setCardProperties();
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;

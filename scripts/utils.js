@@ -18,10 +18,12 @@ const editPopupImage = document.querySelector("#popup-add-card");
 const containerPopupImage = editPopupImage.querySelector(
   "#popup-add-container"
 );
-const templateCard = document.querySelector(".template-card");
 const newImageCloseButton = document.querySelector("#popup-close-add-button");
 const addCardInputTitle = document.querySelector("#input-title");
 const addCardInputUrl = document.querySelector("#input-url");
+
+export const templateCard = document.querySelector(".template-card");
+export const cardArea = document.querySelector(".elements");
 
 export const popupImage = document.querySelector("#popup-image");
 export const popupImageView = popupImage.querySelector(".popup__image-view");
@@ -33,6 +35,33 @@ const imageCloseButton = popupImage.querySelector("#popup-close-image");
 
 nameInput.value = profileName;
 JobInput.value = profileAbout;
+
+export const initialCards = [
+  {
+    name: "Valle de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+  },
+  {
+    name: "Montañas Calvas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+  },
+  {
+    name: "Parque Nacional de la Vanoise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+  },
+];
 
 //Abrir y cerrar profile form
 function handlePopupClick() {
@@ -68,13 +97,15 @@ function handleAddCardSubmit(evt) {
   evt.preventDefault();
   if (evt.submitter.classList.contains("popup__button-save")) {
     const card = new Card(
-      { name: addCardInputTitle.value, link: addCardInputUrl.value },
-      ".template-card"
+      addCardInputTitle.value,
+      addCardInputUrl.value,
+      templateCard
     );
     const newCardElement = card.generateCard();
     cardArea.prepend(newCardElement);
   }
   handleCloseCardForm(editPopupImage, containerPopupImage);
+  formCard.reset();
 }
 
 //Cerrar con boton esc
