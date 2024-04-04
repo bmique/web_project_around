@@ -58,7 +58,6 @@ export default class Card {
   generateCard() {
     this._getCloneFromTemplate();
     this._setEventListeners();
-
     return this._cardElement;
   }
 }
