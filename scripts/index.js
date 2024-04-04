@@ -1,14 +1,10 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
-import { handlePopupClick, closeProfilePopup } from "./utils.js";
+import * as all from "./utils.js";
 
 const cardArea = document.querySelector(".elements");
 const templateCard = document.querySelector(".template-card");
-const inputCardTitle = document.querySelector("#input-title");
-const inputCardUrl = document.querySelector("#input-url");
-const formCard = document.forms.form2;
-
-const templateImage = document.querySelector("#template-image");
+all;
 
 //FormValidator
 const formElementProfile = document.querySelector("#popup_form-profile");
@@ -59,15 +55,5 @@ const initialCards = [
 
 initialCards.forEach((e) => {
   const cardTest = new Card(e.name, e.link, templateCard);
-  cardArea.append(
-    cardTest.generateCard({
-      templateImage: templateImage,
-    })
-  );
+  cardArea.append(cardTest.generateCard());
 });
-
-// formCard.addEventListener("submit", (evt) => {
-//   evt.preventDefault();
-//   const cardTest = new Card(inputCardUrl.value, inputCardTitle.value);
-//   cardArea.append(cardTest.generateCard());
-// });

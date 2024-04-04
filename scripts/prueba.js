@@ -58,7 +58,7 @@ const initialCards = [
 ];
 
 //Abrir y cerrar profile form
-function handlePopupClick(event) {
+function handlePopupClick() {
   editPopupElement.classList.add("popup_opened");
 }
 function closeProfilePopup() {
