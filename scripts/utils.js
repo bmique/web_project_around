@@ -1,6 +1,5 @@
 import Card from "./Card.js";
 
-const page = document.querySelector(".page");
 const profileNameElement = document.querySelector(".profile__name");
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileAboutElement = document.querySelector(".profile__info");

@@ -2,7 +2,7 @@ import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import { initialCards, templateCard, cardArea } from "./utils.js";
 
-//FormValidator
+//validación
 const formElementProfile = document.querySelector("#popup_form-profile");
 const formElementCard = document.querySelector(".popup__form-add");
 
@@ -21,6 +21,7 @@ validateForm.enableValidation();
 const validateFormCard = new FormValidator(formElementCard, settings);
 validateFormCard.enableValidation();
 
+//cards
 initialCards.forEach((e) => {
   const cardTest = new Card(e.name, e.link, templateCard);
   cardArea.append(cardTest.generateCard());
