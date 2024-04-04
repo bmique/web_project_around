@@ -23,6 +23,7 @@ export default class Card {
     this._likeButton = this._cardElement.querySelector(".element__like-button");
     this._removeButton = this._cardElement.querySelector(".element__remove");
     this._popupImage = document.querySelector("#popup-image");
+    console.log(this._popupImage);
     this._popupImageView = this._popupImage.querySelector(".popup__image-view");
     this._imageCloseButton =
       this._popupImage.querySelector("#popup-close-image");
@@ -32,22 +33,30 @@ export default class Card {
   _handleLike() {
     this._like = this._likeButton.classList.toggle("element__like-heart");
   }
+
   _handleRemoveCard() {
     this._removeCard = this._cardElement.remove();
   }
+
   _handleOpenImage() {
     this._popupImageView.src = this._link;
     this._popupImageView.alt = this._name;
     this._popupTitle.textContent = this._name;
     this._popupImage.classList.add("popup_opened");
   }
+
   _handleCloseImage() {
-    this._popupImage.classList.remove("popup_opened");
+    console.log("hola");
+    this._popupImage.remove("popup_opened");
   }
 
   _setEventListeners() {
-    this._popupImage.addEventListener("click", () => {
+    this._cardImage.addEventListener("click", () => {
       this._handleOpenImage();
+    });
+
+    this._popupImage.addEventListener("click", () => {
+      this._handleCloseImage();
     });
 
     this._imageCloseButton.addEventListener("click", () => {
@@ -58,16 +67,12 @@ export default class Card {
       this._handleLike();
     });
 
-    this._cardImage.addEventListener("click", () => {
-      this._handleOpenImage();
-    });
-
     this._removeButton.addEventListener("click", () => {
       this._handleRemoveCard();
     });
   }
 
-  generateCard(evt) {
+  generateCard() {
     this._getCloneFromTemplate();
     this._setEventListeners();
 

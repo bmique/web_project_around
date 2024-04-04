@@ -8,6 +8,8 @@ const inputCardTitle = document.querySelector("#input-title");
 const inputCardUrl = document.querySelector("#input-url");
 const formCard = document.forms.form2;
 
+const templateImage = document.querySelector("#template-image");
+
 //FormValidator
 const formElementProfile = document.querySelector("#popup_form-profile");
 const formElementCard = document.querySelector(".popup__form-add");
@@ -57,7 +59,11 @@ const initialCards = [
 
 initialCards.forEach((e) => {
   const cardTest = new Card(e.name, e.link, templateCard);
-  cardArea.append(cardTest.generateCard());
+  cardArea.append(
+    cardTest.generateCard({
+      templateImage: templateImage,
+    })
+  );
 });
 
 // formCard.addEventListener("submit", (evt) => {
