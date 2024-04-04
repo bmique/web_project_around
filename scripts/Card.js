@@ -1,3 +1,5 @@
+import { popupImage, popupImageView, popupTitle } from "./utils.js";
+
 export default class Card {
   constructor(name, link, template) {
     this._name = name;
@@ -22,12 +24,6 @@ export default class Card {
     this._cardTitle = this._cardElement.querySelector(".element__name");
     this._likeButton = this._cardElement.querySelector(".element__like-button");
     this._removeButton = this._cardElement.querySelector(".element__remove");
-    this._popupImage = document.querySelector("#popup-image");
-    console.log(this._popupImage);
-    this._popupImageView = this._popupImage.querySelector(".popup__image-view");
-    this._imageCloseButton =
-      this._popupImage.querySelector("#popup-close-image");
-    this._popupTitle = this._popupImage.querySelector(".popup__title-image");
   }
 
   _handleLike() {
@@ -39,28 +35,15 @@ export default class Card {
   }
 
   _handleOpenImage() {
-    this._popupImageView.src = this._link;
-    this._popupImageView.alt = this._name;
-    this._popupTitle.textContent = this._name;
-    this._popupImage.classList.add("popup_opened");
-  }
-
-  _handleCloseImage() {
-    console.log("hola");
-    this._popupImage.remove("popup_opened");
+    popupImageView.src = this._link;
+    popupImageView.alt = this._name;
+    popupTitle.textContent = this._name;
+    popupImage.classList.add("popup_opened");
   }
 
   _setEventListeners() {
     this._cardImage.addEventListener("click", () => {
       this._handleOpenImage();
-    });
-
-    this._popupImage.addEventListener("click", () => {
-      this._handleCloseImage();
-    });
-
-    this._imageCloseButton.addEventListener("click", () => {
-      this._handleCloseImage();
     });
 
     this._likeButton.addEventListener("click", () => {

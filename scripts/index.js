@@ -1,10 +1,9 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
-import * as all from "./utils.js";
+import "./utils.js";
 
 const cardArea = document.querySelector(".elements");
 const templateCard = document.querySelector(".template-card");
-all;
 
 //FormValidator
 const formElementProfile = document.querySelector("#popup_form-profile");
@@ -57,3 +56,16 @@ initialCards.forEach((e) => {
   const cardTest = new Card(e.name, e.link, templateCard);
   cardArea.append(cardTest.generateCard());
 });
+
+// initialCards.forEach((el) => {
+//   const card = new Card(el, "#card-template");
+//   const elementCard = card.generateCard({
+//     imgPopup,
+//     page,
+//     imgTemplate,
+//     btnClose: imgPopupClose,
+//     closeEscape: closeWithEscape,
+//   });
+
+//   cards.append(elementCard);
+// });

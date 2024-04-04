@@ -1,17 +1,25 @@
 const profileNameElement = document.querySelector(".profile__name");
+const profileEditButton = document.querySelector(".profile__edit-button");
 const profileAboutElement = document.querySelector(".profile__info");
+
+const profileAddButton = document.querySelector(".profile__add-button");
+const profileCloseButton = document.querySelector(".popup__button-close");
+const formElement = document.forms.form1;
+
+const editPopupElement = document.querySelector("#popup-profile");
 const nameInput = document.querySelector("#input-name");
 const JobInput = document.querySelector("#input-about");
 const profileName = profileNameElement.textContent;
 const profileAbout = profileAboutElement.textContent;
-const profileEditButton = document.querySelector(".profile__edit-button");
-const editPopupElement = document.querySelector("#popup-profile");
-const formElement = document.forms.form1;
-const profileCloseButton = document.querySelector(".popup__button-close");
+
 const editPopupImage = document.querySelector("#popup-add-card");
-const profileAddButton = document.querySelector(".profile__add-button");
 const newImageCloseButton = document.querySelector("#popup-close-add-button");
-const popupImage = document.querySelector("#popup-image");
+
+export const popupImage = document.querySelector("#popup-image");
+export const popupImageView = popupImage.querySelector(".popup__image-view");
+export const popupTitle = popupImage.querySelector(".popup__title-image");
+const imageCloseButton = popupImage.querySelector("#popup-close-image");
+
 nameInput.value = profileName;
 JobInput.value = profileAbout;
 
@@ -23,7 +31,7 @@ function closeProfilePopup() {
   editPopupElement.classList.remove("popup_opened");
 }
 
-//Cerrar image
+//Cerrar imagen
 function handleCloseImage() {
   popupImage.classList.remove("popup_opened");
 }
@@ -58,5 +66,6 @@ profileCloseButton.addEventListener("click", closeProfilePopup);
 formElement.addEventListener("submit", handleProfileFormSubmit);
 profileAddButton.addEventListener("click", handleOpenCardForm);
 newImageCloseButton.addEventListener("click", handleCloseCardForm);
+imageCloseButton.addEventListener("click", handleCloseImage);
 
 export {};
