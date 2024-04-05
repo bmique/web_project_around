@@ -1,4 +1,4 @@
-import { handleDesactiveEnter } from "./utils.js";
+import { handleProfileFormSubmit } from "./utils.js";
 
 export default class FormValidator {
   constructor(formElement, settings) {
@@ -36,8 +36,19 @@ export default class FormValidator {
     this._errorElement.textContent = "";
   }
 
+  _showValidEnter(inputElement) {
+    this._inputSelector.addEventListener("keydown", (evt) => {
+      if (evt.key === "Enter") {
+        if (inputElement.validity.valid) {
+          handleProfileFormSubmit();
+        }
+      }
+    });
+  }
+
   _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
+      this._showValidEnter(inputElement);
       this._showInputError(inputElement, inputElement.validationMessage);
     } else {
       this._hideInputError(inputElement);
@@ -52,7 +63,6 @@ export default class FormValidator {
 
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
-      // handleDesactiveEnter();
       this._buttonElement.classList.add(this._inactiveButtonClass);
     } else {
       this._buttonElement.classList.remove(this._inactiveButtonClass);
@@ -69,12 +79,9 @@ export default class FormValidator {
   }
 
   enableValidation() {
-    this._formList = Array.from(document.querySelectorAll(this._formSelector));
-    this._formList.forEach((formElement) => {
-      formElement.addEventListener("submit", (evt) => {
-        evt.preventDefault();
-      });
-      this._setEventListeners();
+    this._formElement.addEventListener("submit", (evt) => {
+      evt.preventDefault();
     });
+    this._setEventListeners();
   }
 }

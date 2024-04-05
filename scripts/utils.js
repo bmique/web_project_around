@@ -1,5 +1,6 @@
 import Card from "./Card.js";
 
+const inputTest = document.querySelectorAll(".popup__input");
 const profileNameElement = document.querySelector(".profile__name");
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileAboutElement = document.querySelector(".profile__info");
@@ -67,7 +68,6 @@ export const initialCards = [
 
 //Abrir y cerrar profile form
 function handlePopupClick() {
-  handleDesactiveEnter();
   editProfileButton.classList.add("popup__button_disabled");
   editPopupElement.classList.add("popup_opened");
 }
@@ -82,7 +82,6 @@ function handleCloseImage() {
 
 //Abrir y cerrar card form
 function handleOpenCardForm() {
-  handleDesactiveEnter();
   editPopupImage
     .querySelector("#addcard-button")
     .classList.add("popup__button_disabled");
@@ -93,8 +92,7 @@ export function handleCloseCardForm() {
 }
 
 //Editar profile form
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
+export function handleProfileFormSubmit() {
   profileNameElement.textContent = nameInput.value;
   profileAboutElement.textContent = JobInput.value;
   closeProfilePopup();
@@ -102,7 +100,6 @@ function handleProfileFormSubmit(evt) {
 
 //addcard
 function handleAddCardSubmit(evt) {
-  evt.preventDefault();
   if (evt.submitter.classList.contains("popup__button-save")) {
     const card = new Card(
       addCardInputTitle.value,
@@ -137,25 +134,17 @@ function handleCloseClickPopup(evt) {
   }
 }
 
-export function handleDesactiveEnter() {
-  document.addEventListener("keydown", function (evt) {
-    if (evt.code == "Enter") {
-      evt.preventDefault();
-    }
-  });
-}
-
-// export function handleActiveEnter() {
+// export function handleDisableEnter() {
 //   document.addEventListener("keydown", function (evt) {
 //     if (evt.code == "Enter") {
-//       handleDesactiveEnter;
+//       evt.preventDefault();
 //     }
 //   });
 // }
 
 profileEditButton.addEventListener("click", handlePopupClick);
 profileCloseButton.addEventListener("click", closeProfilePopup);
-formElement.addEventListener("submit", handleProfileFormSubmit);
+editProfileButton.addEventListener("click", handleProfileFormSubmit);
 profileAddButton.addEventListener("click", handleOpenCardForm);
 newImageCloseButton.addEventListener("click", handleCloseCardForm);
 imageCloseButton.addEventListener("click", handleCloseImage);
