@@ -1,3 +1,5 @@
+import { handleDesactiveEnter } from "./utils.js";
+
 export default class FormValidator {
   constructor(formElement, settings) {
     this._formElement = formElement;
@@ -50,6 +52,7 @@ export default class FormValidator {
 
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
+      // handleDesactiveEnter();
       this._buttonElement.classList.add(this._inactiveButtonClass);
     } else {
       this._buttonElement.classList.remove(this._inactiveButtonClass);
