@@ -1,5 +1,3 @@
-import { handleProfileFormSubmit } from "./utils.js";
-
 export default class FormValidator {
   constructor(formElement, settings) {
     this._formElement = formElement;
@@ -36,19 +34,8 @@ export default class FormValidator {
     this._errorElement.textContent = "";
   }
 
-  _showValidEnter(inputElement) {
-    this._inputSelector.addEventListener("keydown", (evt) => {
-      if (evt.key === "Enter") {
-        if (inputElement.validity.valid) {
-          handleProfileFormSubmit();
-        }
-      }
-    });
-  }
-
   _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
-      this._showValidEnter(inputElement);
       this._showInputError(inputElement, inputElement.validationMessage);
     } else {
       this._hideInputError(inputElement);

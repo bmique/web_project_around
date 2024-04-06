@@ -1,12 +1,10 @@
 import Card from "./Card.js";
 
-const inputTest = document.querySelectorAll(".popup__input");
 const profileNameElement = document.querySelector(".profile__name");
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileAboutElement = document.querySelector(".profile__info");
 const profileAddButton = document.querySelector(".profile__add-button");
 const profileCloseButton = document.querySelector(".popup__button-close");
-const formElement = document.forms.form1;
 const formCard = document.forms.form2;
 const popupElement = document.querySelector(".popup");
 const editPopupElement = document.querySelector("#popup-profile");
@@ -133,14 +131,6 @@ function handleCloseClickPopup(evt) {
     handleCloseImage();
   }
 }
-
-// export function handleDisableEnter() {
-//   document.addEventListener("keydown", function (evt) {
-//     if (evt.code == "Enter") {
-//       evt.preventDefault();
-//     }
-//   });
-// }
 
 profileEditButton.addEventListener("click", handlePopupClick);
 profileCloseButton.addEventListener("click", closeProfilePopup);
