@@ -5,6 +5,7 @@ const profileEditButton = document.querySelector(".profile__edit-button");
 const profileAboutElement = document.querySelector(".profile__info");
 const profileAddButton = document.querySelector(".profile__add-button");
 const profileCloseButton = document.querySelector(".popup__button-close");
+const formProfile = document.forms.form1;
 const formCard = document.forms.form2;
 const popupElement = document.querySelector(".popup");
 const editPopupElement = document.querySelector("#popup-profile");
@@ -94,6 +95,7 @@ export function handleProfileFormSubmit() {
   profileNameElement.textContent = nameInput.value;
   profileAboutElement.textContent = JobInput.value;
   closeProfilePopup();
+  formProfile.reset();
 }
 
 //addcard

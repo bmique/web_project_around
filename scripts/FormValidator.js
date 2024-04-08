@@ -69,6 +69,11 @@ export default class FormValidator {
     this._formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
+    this._formElement.addEventListener("keydown", (evt) => {
+      if (evt.key === "Enter" && this._hasInvalidInput()) {
+        evt.preventDefault();
+      }
+    });
     this._setEventListeners();
   }
 }
