@@ -1,6 +1,7 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import { initialCards, templateCard, cardArea } from "./utils.js";
+import Section from "./Section.js";
 
 //validación
 const formElementProfile = document.querySelector("#popup_form-profile");
