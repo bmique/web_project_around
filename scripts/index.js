@@ -30,7 +30,6 @@ export const popupImageView = popupImage.querySelector(".popup__image-view");
 export const popupTitle = popupImage.querySelector(".popup__title-image");
 
 const templateCard = document.querySelector(".template-card");
-const cardArea = document.querySelector(".elements");
 
 const initialCards = [
   {
@@ -78,20 +77,18 @@ validateForm.enableValidation();
 const validateFormCard = new FormValidator(formElementCard, settings);
 validateFormCard.enableValidation();
 
-// //cards
-// initialCards.forEach((e) => {
-//   const cardTest = new Card(e.name, e.link, templateCard);
-//   cardArea.append(cardTest.generateCard());
-// });
-
 //section
-const sectionCards = new Section({
-  items: initialCards,
-  renderer: (e) => {
-    const cardTest = new Card(e.name, e.link, templateCard);
-    cardArea.append(cardTest.generateCard());
+const sectionCards = new Section(
+  {
+    items: initialCards,
+    renderer: (item) => {
+      const cardTest = new Card(item.name, item.link, templateCard);
+      const cardElement = cardTest.generateCard();
+      sectionCards.addItem(cardElement);
+    },
   },
-});
+  ".elements"
+);
 
 sectionCards.render();
 
