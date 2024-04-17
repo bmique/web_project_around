@@ -1,9 +1,9 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import Section from "./Section.js";
-// import PopupWithImage from "./PopupWithImage";
 // import PopupWithForm from "./PopupWithForm";
 import Popup from "./Popup.js";
+import PopupWithImage from "./PopupWithImage.js";
 
 export const profileNameElement = document.querySelector(".profile__name");
 export const profileAboutElement = document.querySelector(".profile__info");
@@ -58,6 +58,8 @@ const initialCards = [
   },
 ];
 
+const popupWithImage = new PopupWithImage("#popup-image");
+
 //validación
 const formElementProfile = document.querySelector("#popup_form-profile");
 const formElementCard = document.querySelector(".popup__form-add");
@@ -82,7 +84,12 @@ const sectionCards = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const cardTest = new Card(item.name, item.link, templateCard);
+      const cardTest = new Card(
+        item.name,
+        item.link,
+        templateCard,
+        popupWithImage.open
+      );
       const cardElement = cardTest.generateCard();
       sectionCards.addItem(cardElement);
     },
