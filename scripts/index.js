@@ -1,6 +1,9 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import Section from "./Section.js";
+// import PopupWithImage from "./PopupWithImage";
+// import PopupWithForm from "./PopupWithForm";
+// import Popup from "./Popup.js";
 
 export const profileNameElement = document.querySelector(".profile__name");
 export const profileAboutElement = document.querySelector(".profile__info");
@@ -75,11 +78,22 @@ validateForm.enableValidation();
 const validateFormCard = new FormValidator(formElementCard, settings);
 validateFormCard.enableValidation();
 
-//cards
-initialCards.forEach((e) => {
-  const cardTest = new Card(e.name, e.link, templateCard);
-  cardArea.append(cardTest.generateCard());
+// //cards
+// initialCards.forEach((e) => {
+//   const cardTest = new Card(e.name, e.link, templateCard);
+//   cardArea.append(cardTest.generateCard());
+// });
+
+//section
+const sectionCards = new Section({
+  items: initialCards,
+  renderer: (e) => {
+    const cardTest = new Card(e.name, e.link, templateCard);
+    cardArea.append(cardTest.generateCard());
+  },
 });
+
+sectionCards.render();
 
 //addcard
 function handleAddCardSubmit(evt) {

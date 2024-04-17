@@ -15,8 +15,3 @@ export default class Section {
     });
   }
 }
-
-const sectionCards = new Section({
-  items: initialCards,
-  renderer: function () {},
-});
