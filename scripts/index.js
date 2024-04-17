@@ -3,7 +3,7 @@ import FormValidator from "./FormValidator.js";
 import Section from "./Section.js";
 // import PopupWithImage from "./PopupWithImage";
 // import PopupWithForm from "./PopupWithForm";
-// import Popup from "./Popup.js";
+import Popup from "./Popup.js";
 
 export const profileNameElement = document.querySelector(".profile__name");
 export const profileAboutElement = document.querySelector(".profile__info");

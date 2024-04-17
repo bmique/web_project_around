@@ -1,5 +1,3 @@
-import Card from "./Card.js";
-
 // const profileNameElement = document.querySelector(".profile__name");
 // const profileEditButton = document.querySelector(".profile__edit-button");
 // const profileAboutElement = document.querySelector(".profile__info");
@@ -82,17 +80,17 @@ function handleCloseImage() {
 //   formCard.reset();
 // }
 
-//Cerrar con boton esc
-function handleCloseEsc() {
-  document.addEventListener("keydown", function (evt) {
-    if (evt.key === "Escape") {
-      closeProfilePopup();
-      handleCloseCardForm();
-      handleCloseImage();
-      document.removeEventListener("keydown", handleCloseEsc);
-    }
-  });
-}
+// //Cerrar con boton esc
+// function handleCloseEsc() {
+//   document.addEventListener("keydown", function (evt) {
+//     if (evt.key === "Escape") {
+//       closeProfilePopup();
+//       handleCloseCardForm();
+//       handleCloseImage();
+//       document.removeEventListener("keydown", handleCloseEsc);
+//     }
+//   });
+// }
 
 //Cerrar ventanas emergentes
 // function handleCloseClickPopup(evt) {
@@ -114,5 +112,3 @@ handleCloseEsc();
 // popupElement.addEventListener("click", handleCloseClickPopup);
 // editPopupImage.addEventListener("click", handleCloseClickPopup);
 popupImage.addEventListener("click", handleCloseClickPopup);
-
-export {};
