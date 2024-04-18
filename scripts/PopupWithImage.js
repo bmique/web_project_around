@@ -10,6 +10,7 @@ export default class PopupWithImage extends Popup {
     document.querySelector(".popup__image-view").alt = name;
     document.querySelector(".popup__title-image").textContent = name;
     super.open();
+    super.setEventListeners();
   }
 
   setEventListeners() {

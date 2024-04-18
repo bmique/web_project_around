@@ -84,11 +84,8 @@ const sectionCards = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const cardTest = new Card(
-        item.name,
-        item.link,
-        templateCard,
-        popupWithImage.open
+      const cardTest = new Card(item.name, item.link, templateCard, () =>
+        popupWithImage.open(item.name, item.link)
       );
       const cardElement = cardTest.generateCard();
       sectionCards.addItem(cardElement);
