@@ -1,5 +1,3 @@
-import { popupImage, popupImageView, popupTitle } from "./index.js";
-
 export default class Card {
   constructor(name, link, template, handleOpenImage) {
     this._name = name;
