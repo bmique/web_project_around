@@ -13,7 +13,6 @@ export default class PopupWithImage extends Popup {
     super.open();
     const popupImage = document.querySelector("#popup-image");
     const popupImageView = popupImage.querySelector(".popup__image-view");
-    console.log(popupImageView);
     const popupTitle = popupImage.querySelector(".popup__title-image");
 
     popupImageView.src = link;

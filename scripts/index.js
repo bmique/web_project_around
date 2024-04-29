@@ -112,6 +112,26 @@ function openProfile() {
 
 profileEditButton.addEventListener("click", openProfile);
 
+//new section
+const defaultCardList = new Section(
+  {
+    items: initialCards,
+    renderer: (item) => {
+      const card = new Card(
+        item.name,
+        item.link,
+        ".template-card",
+        popupWithImage.open
+      );
+      const cardElement = card.generateCard();
+      defaultCardList.addItem(cardElement);
+    },
+  },
+  ".elements"
+);
+
+defaultCardList.render();
+
 //
 function formSubmitHandler(formValues, action) {
   if (action === "edit") {
@@ -120,7 +140,7 @@ function formSubmitHandler(formValues, action) {
     const newCard = new Card(
       formValues["input-name"],
       formValues["input-about"],
-      ".template-card",
+      ".element",
       popupWithImage.open
     ).generateCard();
     defaultCardList.setItem(newCard);
