@@ -21,16 +21,8 @@ const containerPopupImage = editPopupImage.querySelector(
 );
 const templateCard = document.querySelector(".template-card");
 
-export const profileAddButton = document.querySelector(".profile__add-button");
-export const newImageCloseButton = document.querySelector(
-  "#popup-close-add-button"
-);
-
-const userInfo = new UserInfo({
-  nameSelector: ".profile__name",
-  jobSelector: ".profile__info",
-});
-const userData = userInfo.getUserInfo();
+const profileAddButton = document.querySelector(".profile__add-button");
+const newImageCloseButton = document.querySelector("#popup-close-add-button");
 
 const initialCards = [
   {
@@ -59,12 +51,18 @@ const initialCards = [
   },
 ];
 
+const userInfo = new UserInfo({
+  nameSelector: ".profile__name",
+  jobSelector: ".profile__info",
+});
+const userData = userInfo.getUserInfo();
+
 const popupWithImage = new PopupWithImage("#popup-image");
 
-//validación
 const formElementProfile = document.querySelector("#popup_form-profile");
 const formElementCard = document.querySelector(".popup__form-add");
 
+//validation
 const settings = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -80,7 +78,20 @@ validateForm.enableValidation();
 const validateFormCard = new FormValidator(formElementCard, settings);
 validateFormCard.enableValidation();
 
-//section
+//Add card
+function popupAddCard(evt) {
+  evt.preventDefault();
+  const popup = new Popup("#popup-add-card");
+  popup.open();
+  page.classList.add("fix");
+
+  const addForm = document.querySelector(".popup__form-add");
+  new FormValidator(addForm, settings);
+}
+
+profileAddButton.addEventListener("click", popupAddCard);
+
+//Cards
 const sectionCards = new Section(
   {
     items: initialCards,
@@ -144,7 +155,6 @@ function formSubmitHandler(formValues, action) {
       popupWithImage.open
     ).generateCard();
     defaultCardList.setItem(newCard);
-    console.log(formValues);
   }
   const popup = new Popup(".popup");
   popup.close();
@@ -164,7 +174,7 @@ popupWithFormAdd.setEventListeners();
 
 // //addcard
 // function handleAddCardSubmit(evt) {
-//   if (evt.submitter.classList.contains("popup__button-save")) {
+//   if (evt.classList.contains("popup__button-save")) {
 //     const card = new Card(
 //       addCardInputTitle.value,
 //       addCardInputUrl.value,

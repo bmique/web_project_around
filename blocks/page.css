@@ -27,6 +27,10 @@ html {
   display: block;
 }
 
+.fix {
+  overflow: hidden;
+}
+
 .form__input:invalid {
   border-bottom: 1px solid red;
 }
