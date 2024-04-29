@@ -112,33 +112,49 @@ function openProfile() {
 
 profileEditButton.addEventListener("click", openProfile);
 
+//
+function formSubmitHandler(formValues, action) {
+  if (action === "edit") {
+    userInfo.setUserInfo({ name: nameInput.value, job: jobInput.value });
+  } else if (action === "add") {
+    const newCard = new Card(
+      formValues["input-name"],
+      formValues["input-about"],
+      ".template-card",
+      popupWithImage.open
+    ).generateCard();
+    defaultCardList.setItem(newCard);
+    console.log(formValues);
+  }
+  const popup = new Popup(".popup");
+  popup.close();
+  page.classList.remove("fix");
+}
+
 //popupWithForm
-const popupWithFormEdit = new PopupWithForm(".popup__edit", (formValues) =>
+const popupWithFormEdit = new PopupWithForm(".profile__edit", (formValues) =>
   formSubmitHandler(formValues, "edit")
 );
-const popupWithFormAdd = new PopupWithForm("#popup__add", (formValues) =>
+const popupWithFormAdd = new PopupWithForm("#popup-add-card", (formValues) =>
   formSubmitHandler(formValues, "add")
 );
 
 popupWithFormEdit.setEventListeners();
 popupWithFormAdd.setEventListeners();
 
-const popupWithForm = new PopupWithForm(".selector", formSubmitHandler);
-popupWithForm.setEventListeners();
+// //addcard
+// function handleAddCardSubmit(evt) {
+//   if (evt.submitter.classList.contains("popup__button-save")) {
+//     const card = new Card(
+//       addCardInputTitle.value,
+//       addCardInputUrl.value,
+//       templateCard
+//     );
+//     const newCardElement = card.generateCard();
+//     cardArea.prepend(newCardElement);
+//   }
+//   handleCloseCardForm(editPopupImage, containerPopupImage);
+//   formCard.reset();
+// }
 
-//addcard
-function handleAddCardSubmit(evt) {
-  if (evt.submitter.classList.contains("popup__button-save")) {
-    const card = new Card(
-      addCardInputTitle.value,
-      addCardInputUrl.value,
-      templateCard
-    );
-    const newCardElement = card.generateCard();
-    cardArea.prepend(newCardElement);
-  }
-  handleCloseCardForm(editPopupImage, containerPopupImage);
-  formCard.reset();
-}
-
-handleAddCardSubmit();
+// handleAddCardSubmit();
