@@ -2,7 +2,9 @@ export default class Card {
   constructor(name, link, template, handleOpenImage) {
     this._name = name;
     this._link = link;
+    console.log(template);
     this._template = template;
+
     this._handleOpenImage = handleOpenImage;
   }
 
