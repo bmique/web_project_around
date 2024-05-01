@@ -182,11 +182,11 @@ function formSubmitHandler(formValues, action) {
 }
 
 //popupWithForm
-const popupWithFormEdit = new PopupWithForm(".profile__edit", (formValues) =>
+const popupWithFormEdit = new PopupWithForm(".profile__edit", () =>
   formSubmitHandler()
 );
-const popupWithFormAdd = new PopupWithForm("#popup-add-card", (formValues) =>
-  formSubmitHandler(formValues, "add")
+const popupWithFormAdd = new PopupWithForm("#popup-add-card", () =>
+  formSubmitHandler()
 );
 
 popupWithFormEdit.setEventListeners();
