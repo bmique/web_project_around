@@ -3,10 +3,6 @@ import Popup from "./Popup.js";
 export default class PopupWithImage extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
-    this._closeButton = this._popupElement.querySelector(
-      ".popup__button-close"
-    );
-    this._closeButton.addEventListener("click", () => this.close());
   }
 
   open(name, link) {
@@ -22,7 +18,5 @@ export default class PopupWithImage extends Popup {
 
   close() {
     super.close();
-    super.setEventListeners();
-    document.removeEventListener("keydown", this._handleEscClose);
   }
 }

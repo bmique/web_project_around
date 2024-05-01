@@ -55,7 +55,6 @@ const userInfo = new UserInfo({
   nameSelector: ".profile__name",
   jobSelector: ".profile__info",
 });
-const userData = userInfo.getUserInfo();
 
 const popupWithImage = new PopupWithImage("#popup-image");
 
@@ -108,22 +107,6 @@ const sectionCards = new Section(
 
 sectionCards.render();
 
-// Profile form
-function openProfile() {
-  const popup = new PopupWithForm(".popup", formSubmitHandler);
-  popup.setEventListeners();
-  nameInput.value = userData.name;
-  jobInput.value = userData.job;
-
-  const formElement = document.querySelector(".popup__form");
-  new FormValidator(formElement, settings);
-
-  popup.open();
-  page.classList.add("fix");
-}
-
-profileEditButton.addEventListener("click", openProfile);
-
 // //new section
 // const defaultCardList = new Section(
 //   {
@@ -144,12 +127,6 @@ profileEditButton.addEventListener("click", openProfile);
 
 // defaultCardList.render();
 
-//
-// function formSubmitEdit() {
-//   userInfo.setUserInfo({ name: nameInput.value, job: jobInput.value });
-//   page.classList.remove("fix");
-// }
-
 // function formSubmitAdd(formValues) {
 //   const newCard = new Card(
 //     formValues["input-name"],
@@ -164,7 +141,6 @@ profileEditButton.addEventListener("click", openProfile);
 // }
 
 function formSubmitHandler(formValues, action) {
-  console.log(formValues, action);
   if (action === "edit") {
     userInfo.setUserInfo({ name: nameInput.value, job: jobInput.value });
   } else if (action === "add") {
@@ -182,29 +158,22 @@ function formSubmitHandler(formValues, action) {
 }
 
 //popupWithForm
-const popupWithFormEdit = new PopupWithForm(".profile__edit", () =>
-  formSubmitHandler()
+const popupWithFormEdit = new PopupWithForm(
+  "#popup-profile",
+  formSubmitHandler
 );
-const popupWithFormAdd = new PopupWithForm("#popup-add-card", () =>
-  formSubmitHandler()
+const popupWithFormAdd = new PopupWithForm(
+  "#popup-add-card",
+  formSubmitHandler
 );
 
 popupWithFormEdit.setEventListeners();
 popupWithFormAdd.setEventListeners();
 
-// //addcard
-// function handleAddCardSubmit(evt) {
-//   if (evt.classList.contains("popup__button-save")) {
-//     const card = new Card(
-//       addCardInputTitle.value,
-//       addCardInputUrl.value,
-//       templateCard
-//     );
-//     const newCardElement = card.generateCard();
-//     cardArea.prepend(newCardElement);
-//   }
-//   handleCloseCardForm(editPopupImage, containerPopupImage);
-//   formCard.reset();
-// }
+profileEditButton.addEventListener("click", () => {
+  const userData = userInfo.getUserInfo();
+  nameInput.value = userData.name;
+  jobInput.value = userData.job;
 
-// handleAddCardSubmit();
+  popupWithFormEdit.open();
+});
