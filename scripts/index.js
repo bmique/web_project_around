@@ -66,19 +66,6 @@ validateForm.enableValidation();
 const validateFormCard = new FormValidator(formElementCard, settings);
 validateFormCard.enableValidation();
 
-//Add card
-function popupAddCard(evt) {
-  evt.preventDefault();
-  const popup = new Popup("#popup-add-card");
-  popup.open();
-  page.classList.add("fix");
-
-  const addForm = document.querySelector(".popup__form-add");
-  new FormValidator(addForm, settings);
-}
-
-profileAddButton.addEventListener("click", popupAddCard);
-
 //Cards
 const sectionCards = new Section(
   {
@@ -95,36 +82,6 @@ const sectionCards = new Section(
 );
 
 sectionCards.render();
-
-// //new section
-// const newSection = new Section(
-//   {
-//     items: initialCards,
-//     renderer: (item) => {
-//       const card = new Card(
-//         item.name,
-//         item.link,
-//         ".template-card",
-//         popupWithImage.open
-//       );
-//       const cardElement = card.generateCard();
-//       newSection.addItem(cardElement);
-//     },
-//   },
-//   ".elements"
-// );
-
-// newSection.render();
-
-// function formSubmitAdd(formValues) {
-//   const newCard = new Card(
-//     formValues["input-name"],
-//     formValues["input-about"],
-//     templateCard,
-//     popupWithImage.open
-//   ).generateCard();
-//   newSection.setItem(newCard);
-// }
 
 function formSubmitHandler(formValues, action) {
   if (action === "edit") {
@@ -163,3 +120,42 @@ profileEditButton.addEventListener("click", () => {
 
   popupWithFormEdit.open();
 });
+
+// //Add card
+// function popupAddCard(evt) {
+//   evt.preventDefault();
+//   const addForm = document.querySelector(".popup__form-add");
+//   new FormValidator(addForm, settings);
+// }
+
+// profileAddButton.addEventListener("click", popupAddCard);
+
+// //new section
+// const newSection = new Section(
+//   {
+//     items: initialCards,
+//     renderer: (item) => {
+//       const card = new Card(
+//         item.name,
+//         item.link,
+//         ".template-card",
+//         popupWithImage.open
+//       );
+//       const cardElement = card.generateCard();
+//       newSection.addItem(cardElement);
+//     },
+//   },
+//   ".elements"
+// );
+
+// newSection.render();
+
+// function formSubmitAdd(formValues) {
+//   const newCard = new Card(
+//     formValues["input-name"],
+//     formValues["input-about"],
+//     templateCard,
+//     popupWithImage.open
+//   ).generateCard();
+//   newSection.setItem(newCard);
+// }
