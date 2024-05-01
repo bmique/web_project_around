@@ -8,21 +8,10 @@ import UserInfo from "./UserInfo.js";
 
 const profileEditButton = document.querySelector(".profile__edit-button");
 const page = document.querySelector(".page");
-const addCardInputTitle = document.querySelector("#input-title");
-const addCardInputUrl = document.querySelector("#input-url");
-const cardArea = document.querySelector(".elements");
-const formCard = document.forms.form2;
-
 const nameInput = document.querySelector("#input-name");
 const jobInput = document.querySelector("#input-about");
-const editPopupImage = document.querySelector("#popup-add-card");
-const containerPopupImage = editPopupImage.querySelector(
-  "#popup-add-container"
-);
 const templateCard = document.querySelector(".template-card");
-
 const profileAddButton = document.querySelector(".profile__add-button");
-const newImageCloseButton = document.querySelector("#popup-close-add-button");
 
 const initialCards = [
   {
@@ -108,7 +97,7 @@ const sectionCards = new Section(
 sectionCards.render();
 
 // //new section
-// const defaultCardList = new Section(
+// const newSection = new Section(
 //   {
 //     items: initialCards,
 //     renderer: (item) => {
@@ -119,13 +108,13 @@ sectionCards.render();
 //         popupWithImage.open
 //       );
 //       const cardElement = card.generateCard();
-//       defaultCardList.addItem(cardElement);
+//       newSection.addItem(cardElement);
 //     },
 //   },
 //   ".elements"
 // );
 
-// defaultCardList.render();
+// newSection.render();
 
 // function formSubmitAdd(formValues) {
 //   const newCard = new Card(
@@ -134,10 +123,7 @@ sectionCards.render();
 //     templateCard,
 //     popupWithImage.open
 //   ).generateCard();
-//   defaultCardList.setItem(newCard);
-//   const popup = new Popup(".popup");
-//   popup.close();
-//   page.classList.remove("fix");
+//   newSection.setItem(newCard);
 // }
 
 function formSubmitHandler(formValues, action) {
@@ -150,7 +136,7 @@ function formSubmitHandler(formValues, action) {
       templateCard,
       popupWithImage.open
     ).generateCard();
-    defaultCardList.setItem(newCard);
+    newSection.setItem(newCard);
   }
   const popup = new Popup(".popup");
   popup.close();
