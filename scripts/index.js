@@ -93,18 +93,16 @@ function formSubmitHandler(formValues, action) {
       templateCard,
       popupWithImage.open
     ).generateCard();
-    sectionCards.setItem(newCard);
+    sectionCards.addItem(newCard);
   }
 }
 
 //popupWithForm
-const popupWithFormEdit = new PopupWithForm(
-  "#popup-profile",
-  formSubmitHandler
+const popupWithFormEdit = new PopupWithForm("#popup-profile", (formValues) =>
+  formSubmitHandler(formValues, "edit")
 );
-const popupWithFormAdd = new PopupWithForm(
-  "#popup-add-card",
-  formSubmitHandler
+const popupWithFormAdd = new PopupWithForm("#popup-add-card", (formValues) =>
+  formSubmitHandler(formValues, "add")
 );
 
 popupWithFormEdit.setEventListeners();
@@ -119,13 +117,3 @@ profileEditButton.addEventListener("click", () => {
 });
 
 profileAddButton.addEventListener("click", popupWithFormAdd.open);
-
-// function formSubmitAdd(formValues) {
-//   const newCard = new Card(
-//     formValues["input-name"],
-//     formValues["input-about"],
-//     templateCard,
-//     popupWithImage.open
-//   ).generateCard();
-//   newSection.setItem(newCard);
-// }
