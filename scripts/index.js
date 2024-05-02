@@ -93,7 +93,7 @@ function formSubmitHandler(formValues, action) {
       templateCard,
       popupWithImage.open
     ).generateCard();
-    // newSection.setItem(newCard);
+    sectionCards.setItem(newCard);
   }
 }
 
@@ -119,26 +119,6 @@ profileEditButton.addEventListener("click", () => {
 });
 
 profileAddButton.addEventListener("click", popupWithFormAdd.open);
-
-// //new section
-// const newSection = new Section(
-//   {
-//     items: initialCards,
-//     renderer: (item) => {
-//       const card = new Card(
-//         item.name,
-//         item.link,
-//         ".template-card",
-//         popupWithImage.open
-//       );
-//       const cardElement = card.generateCard();
-//       newSection.addItem(cardElement);
-//     },
-//   },
-//   ".elements"
-// );
-
-// newSection.render();
 
 // function formSubmitAdd(formValues) {
 //   const newCard = new Card(
