@@ -6,24 +6,20 @@
     <meta name="author" content="Betsabé Mique Ponce" />
     <meta name="description" content="Web Alrededor de los EE.UU." />
     <meta name="keywords" content="EE.UU." />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
     <title>Alrededor de los EE.UU.</title>
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img
-          src="<%=require('./images/__logo.svg')%>"
-          alt="Logo"
-          class="header__logo"
-        />
+        <img id="logo" alt="Logo" class="header__logo" />
       </header>
       <main class="content">
         <section class="profile">
           <div class="profile__image-container">
             <img
-              src="<%= require('./images/image__profile.jpg')%>"
+              id="profile-img"
               alt="Imagen de perfil"
               class="profile__image"
             />
@@ -139,7 +135,5 @@
         </div>
       </div>
     </template>
-    <script type="module" src="./scripts/index.js"></script>
-    <script type="nomodule" src="./scripts/index.js"></script>
   </body>
 </html>

@@ -1,4 +1,6 @@
 import "./styles/index.css";
+import logoSrc from "./images/_logo.svg";
+import profileSrc from "./images/image__profile.jpg";
 import Card from "../scripts/Card.js";
 import FormValidator from "../scripts/FormValidator.js";
 import Section from "../scripts/Section.js";
@@ -6,61 +8,40 @@ import PopupWithForm from "../scripts/PopupWithForm.js";
 import PopupWithImage from "../scripts/PopupWithImage.js";
 import UserInfo from "../scripts/UserInfo.js";
 
+const profileImg = document.getElementById("profile-img");
+profileImg.src = profileSrc;
+const logo = document.getElementById("logo");
+logo.src = logoSrc;
 const profileEditButton = document.querySelector(".profile__edit-button");
 const nameInput = document.querySelector("#input-name");
 const jobInput = document.querySelector("#input-about");
 const templateCard = document.querySelector(".template-card");
 const profileAddButton = document.querySelector(".profile__add-button");
 
-const yosemiteImg = new URL(
-  "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
-  import.meta.url
-);
-const louiseImg = new URL(
-  "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
-  import.meta.url
-);
-const calvasImg = new URL(
-  "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
-  import.meta.url
-);
-const latemarImg = new URL(
-  "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
-  import.meta.url
-);
-const vanoiseImg = new URL(
-  "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
-  import.meta.url
-);
-const dibraiesImg = new URL(
-  "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
-  import.meta.url
-);
-
 const initialCards = [
   {
     name: "Valle de Yosemite",
-    link: yosemiteImg,
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
   },
   {
     name: "Lago Louise",
-    link: louiseImg,
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
   },
   {
     name: "Montañas Calvas",
-    link: calvasImg,
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
   },
   {
     name: "Latemar",
-    link: latemarImg,
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
   },
   {
     name: "Parque Nacional de la Vanoise",
-    link: vanoiseImg,
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
   },
   {
     name: "Lago di Braies",
-    link: dibraiesImg,
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
 ];
 
