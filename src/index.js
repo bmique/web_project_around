@@ -1,3 +1,4 @@
+import "./styles/index.css";
 import Card from "../scripts/Card.js";
 import FormValidator from "../scripts/FormValidator.js";
 import Section from "../scripts/Section.js";
@@ -11,30 +12,55 @@ const jobInput = document.querySelector("#input-about");
 const templateCard = document.querySelector(".template-card");
 const profileAddButton = document.querySelector(".profile__add-button");
 
+const yosemiteImg = new URL(
+  "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
+  import.meta.url
+);
+const louiseImg = new URL(
+  "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+  import.meta.url
+);
+const calvasImg = new URL(
+  "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+  import.meta.url
+);
+const latemarImg = new URL(
+  "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+  import.meta.url
+);
+const vanoiseImg = new URL(
+  "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
+  import.meta.url
+);
+const dibraiesImg = new URL(
+  "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+  import.meta.url
+);
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
+    link: yosemiteImg,
   },
   {
     name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+    link: louiseImg,
   },
   {
     name: "Montañas Calvas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+    link: calvasImg,
   },
   {
     name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+    link: latemarImg,
   },
   {
     name: "Parque Nacional de la Vanoise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
+    link: vanoiseImg,
   },
   {
     name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+    link: dibraiesImg,
   },
 ];
 
