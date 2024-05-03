@@ -6,20 +6,19 @@
     <meta name="author" content="Betsabé Mique Ponce" />
     <meta name="description" content="Web Alrededor de los EE.UU." />
     <meta name="keywords" content="EE.UU." />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="stylesheet" href="favicon.ico" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
     <title>Alrededor de los EE.UU.</title>
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/__logo.svg" alt="logo" class="header__logo" />
+        <img id="logo" alt="Logo" class="header__logo" />
       </header>
       <main class="content">
         <section class="profile">
           <div class="profile__image-container">
             <img
-              src="./images/image__profile.jpg"
+              id="profile-img"
               alt="Imagen de perfil"
               class="profile__image"
             />
@@ -51,6 +50,7 @@
               minlength="2"
               maxlength="40"
               required
+              name="name"
             />
             <span class="input-name-error"></span>
             <input
@@ -60,6 +60,7 @@
               minlength="2"
               maxlength="200"
               required
+              name="about"
             />
             <span class="input-about-error"></span>
             <button
@@ -88,6 +89,7 @@
               minlength="2"
               maxlength="30"
               required
+              name="name"
             />
             <span class="input-title-error"></span>
             <input
@@ -96,6 +98,7 @@
               type="url"
               placeholder="Enlace a la imagen"
               required
+              name="link"
             />
             <span class="input-url-error"></span>
             <button
@@ -131,7 +134,5 @@
         </div>
       </div>
     </template>
-    <script type="module" src="./scripts/index.js"></script>
-    <script type="nomodule" src="./scripts/index.js"></script>
   </body>
 </html>

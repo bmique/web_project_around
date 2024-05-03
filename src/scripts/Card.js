@@ -1,17 +1,16 @@
-import { popupImage, popupImageView, popupTitle } from "./utils.js";
-
 export default class Card {
-  constructor(name, link, template) {
+  constructor(name, link, template, handleOpenImage) {
     this._name = name;
     this._link = link;
     this._template = template;
+
+    this._handleOpenImage = handleOpenImage;
   }
 
   _getCloneFromTemplate() {
     this._cardElement = this._template
       .cloneNode(true)
       .content.querySelector(".element");
-
     this._setCardProperties();
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
@@ -35,16 +34,9 @@ export default class Card {
     this._removeCard = this._cardElement.remove();
   }
 
-  _handleOpenImage() {
-    popupImageView.src = this._link;
-    popupImageView.alt = this._name;
-    popupTitle.textContent = this._name;
-    popupImage.classList.add("popup_opened");
-  }
-
   _setEventListeners() {
     this._cardImage.addEventListener("click", () => {
-      this._handleOpenImage();
+      this._handleOpenImage(this._name, this._link);
     });
 
     this._likeButton.addEventListener("click", () => {
