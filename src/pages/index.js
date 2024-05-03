@@ -1,6 +1,6 @@
 import "./index.css";
-import logoSrc from "./images/__logo.svg";
-import profileSrc from "./images/image__profile.jpg";
+import logoSrc from "../images/__logo.svg";
+import profileSrc from "../images/image__profile.jpg";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
