@@ -1,6 +1,6 @@
 # Tripleten web_project_around
 
-Proyecto 5 Tripleten "Alrededor de los EE.UU."
+Proyecto 5 al 10 Tripleten "Alrededor de los EE.UU."
 
 ## Descripción del proyecto
 
@@ -19,6 +19,8 @@ Crear una página interactiva en la que los usuarios pueden añadir, eliminar o 
 - Diseño responsivo
 - Javascript
 - Git
+- Webpack
+- APIs
 
 ## Enlace sitio web:
 
